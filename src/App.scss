@@ -1,0 +1,18 @@
+@import "./index.scss";
+
+.App {
+  min-height: 100vh;
+}
+
+.default-margin {
+  max-width: 1400px;
+  margin: 0 auto;
+
+  @include rwd("0px") {
+    padding: 0 30px;
+  }
+
+  @include rwd("1450px") {
+    padding: 0;
+  }
+}

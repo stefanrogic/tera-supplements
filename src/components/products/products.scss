@@ -1,0 +1,41 @@
+@import "../../index.scss";
+
+.header {
+  width: 100%;
+  margin-top: 100px;
+  margin-bottom: 30px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  h1 {
+    margin: 0;
+  }
+
+  .all-products-btn {
+    height: 50px;
+    width: 150px;
+
+    // ALIGN ICONS
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border: none;
+    border-radius: 10px;
+    color: rgb(0, 0, 0);
+    border: 1px solid rgb(77, 77, 77);
+    background-color: transparent;
+  }
+}
+
+.products {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  row-gap: 50px;
+
+  justify-content: space-between;
+  border-radius: 10px;
+}

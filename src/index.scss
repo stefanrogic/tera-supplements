@@ -1,0 +1,68 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap");
+
+:root {
+  font-family: "Oswald", sans-serif;
+
+  color: rgba(0, 0, 0, 0.87);
+  background-color: #ffffff;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  font-family: "Oswald", sans-serif;
+
+  cursor: pointer;
+}
+
+@mixin mobile {
+  @media (min-width: 250px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: 760px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: 1280px) {
+    @content;
+  }
+}
+
+// CUSTOM
+@mixin rwd($screen) {
+  @media (min-width: $screen) {
+    @content;
+  }
+}
+
+$palette: (
+  darkGreen: #3a4928,
+  lightGreen: #4b6b3c,
+  darkBrown: #3b2e1e,
+  lightBrown: #907a48,
+  darkBaige: #d4bf88,
+  lightBaige: #e6deb9,
+);

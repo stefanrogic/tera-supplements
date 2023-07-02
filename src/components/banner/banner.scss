@@ -1,0 +1,23 @@
+.home-banner {
+  margin-top: 100px;
+  height: 300px;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 10px;
+  background-color: rgb(245, 122, 122);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("https://cdn.pixabay.com/photo/2015/07/02/10/27/training-828764_1280.jpg");
+  background-size: "cover";
+  background-position: center;
+  // background-repeat: no-repeat;
+
+  cursor: pointer;
+
+  h1 {
+    margin: 0;
+    color: white;
+  }
+}
