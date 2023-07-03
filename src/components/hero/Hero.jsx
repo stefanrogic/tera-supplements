@@ -20,15 +20,15 @@ const Hero = () => {
     <div className="default-margin">
       <div className="hero-section">
         <AnimatePresence initial={false} mode="wait">
-          {page === 0 && <HeroContent key={0} contentPage={0} bg="red" />}
-          {page === 1 && <HeroContent key={1} contentPage={1} bg="blue" />}
-          {page === 2 && <HeroContent key={2} contentPage={2} bg="green" />}
+          {page === 0 && <HeroContent key={0} contentPage={0} />}
+          {page === 1 && <HeroContent key={1} contentPage={1} />}
+          {page === 2 && <HeroContent key={2} contentPage={2} />}
         </AnimatePresence>
 
         <div className="bottom">
           <div className="list">
             {[0, 1, 2].map((_, i) => (
-              <div key={i} style={{ backgroundColor: i === page ? "black" : "white" }} onClick={() => setPageExact(i)}></div>
+              <div key={i} style={{ backgroundColor: i === page ? "#231f20" : "white" }} onClick={() => setPageExact(i)}></div>
             ))}
           </div>
 

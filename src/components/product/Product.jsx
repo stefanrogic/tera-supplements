@@ -1,6 +1,5 @@
 import "./product.scss";
 
-
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -31,33 +30,34 @@ const Product = ({ data }) => {
   const add = (product) => dispatch(addItem(product));
 
   return (
-    <Link className="product-link" to={`/product/${data.id}`}>
-      
-      <motion.div ref={ref} className="product-container" animate={isInView ? "visible" : "invisible"} variants={variants} transition={{ duration: 1 }}>
+    <motion.div ref={ref} className="product-container" animate={isInView ? "visible" : "invisible"} variants={variants} transition={{ duration: 1 }}>
+      <Link className="product-link" to={`/product/${data.id}`}>
         <div className="img-placeholder" style={{ backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),url('${data.productImg}')`, backgroundSize: "cover" }}></div>
-        <div className="product-info">
+      </Link>
+      <div className="product-info">
+        <Link className="product-link" to={`/product/${data.id}`} style={{ color: "#231f20" }}>
           <div className="middle">
             <h2>{data.productName}</h2>
             <p>{data.productCategory}</p>
           </div>
-          <div className="bottom">
-            {data.discountPercent ? <p style={{ fontSize: "20px", marginRight: "10px", textDecoration: "line-through" }}>{data.productPrice}</p> : ""}
-            <p>${data.discountPercent ? parseFloat(data.productPrice - data.productPrice * (data.discountPercent / 100)).toFixed(2) : data.productPrice}</p>
-            {data.discountPercent ? <span style={{ color: "red" }}>{data.discountPercent + "%"}</span> : ""}
-            <motion.button
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-              onClick={() => {
-                add({ ...data, quantity: quantity });
-                notify();
-              }}
-            >
-              <AddShoppingCartIcon />
-            </motion.button>
-          </div>
+        </Link>
+        <div className="bottom">
+          {data.discountPercent ? <p style={{ fontSize: "20px", marginRight: "10px", textDecoration: "line-through" }}>{data.productPrice}</p> : ""}
+          <p>${data.discountPercent ? parseFloat(data.productPrice - data.productPrice * (data.discountPercent / 100)).toFixed(2) : data.productPrice}</p>
+          {data.discountPercent ? <span style={{ color: "red" }}>{data.discountPercent + "%"}</span> : ""}
+          <motion.button
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+            onClick={() => {
+              add({ ...data, quantity: quantity });
+              notify();
+            }}
+          >
+            <AddShoppingCartIcon />
+          </motion.button>
         </div>
-      </motion.div>
-    </Link>
+      </div>
+    </motion.div>
   );
 };
 

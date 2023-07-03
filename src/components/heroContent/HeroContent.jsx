@@ -7,14 +7,17 @@ const content = [
   {
     text: "20% OFF ON ALL VITAMINS",
     img: "https://cdn.pixabay.com/photo/2014/11/17/13/17/crossfit-534615_1280.jpg",
+    position: "bottom",
   },
   {
     text: "CHANGE ME",
-    img: "https://cdn.pixabay.com/photo/2023/06/16/05/26/grassland-8066987_1280.jpg",
+    img: "https://cdn.pixabay.com/photo/2017/08/07/14/02/man-2604149_1280.jpg",
+    position: "top",
   },
   {
     text: "PLS",
-    img: "https://cdn.pixabay.com/photo/2023/05/11/10/43/windmills-7986053_1280.jpg",
+    img: "https://cdn.pixabay.com/photo/2016/12/21/19/22/boxer-1923694_1280.jpg",
+    position: "center",
   },
 ];
 
@@ -46,9 +49,10 @@ const HeroContent = ({ contentPage }) => {
       style={{
         height: "inherit",
         borderRadius: "inherit",
+        //
         backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),url(${content.find((_, i) => i === contentPage).img})`,
         backgroundSize: "cover",
-        backgroundPosition: "bottom",
+        backgroundPosition: content.find((_, i) => i === contentPage).position,
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
