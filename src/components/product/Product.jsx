@@ -13,7 +13,7 @@ import { addItem } from "../../redux/slices/cartSlice";
 import { Link } from "react-router-dom";
 
 const variants = {
-  invisible: { opacity: 0, x: -100 },
+  hidden: { opacity: 0, x: -100 },
   visible: { opacity: 1, x: 0 },
 };
 
@@ -30,24 +30,26 @@ const Product = ({ data }) => {
   const add = (product) => dispatch(addItem(product));
 
   return (
-    <motion.div ref={ref} className="product-container" animate={isInView ? "visible" : "invisible"} variants={variants} transition={{ duration: 1 }}>
-      <Link className="product-link" to={`/product/${data.id}`}>
-        <div className="img-placeholder" style={{ backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),url('${data.productImg}')`, backgroundSize: "cover" }}></div>
+    <motion.div ref={ref} className="product-container" animate={isInView ? "visible" : "hidden"} variants={variants} transition={{ duration: 0.5 }}>
+      <Link className="product-link" to={`/product/${data.productSlug}`}>
+        <motion.div className="img-div" whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.9, backgroundColor: "#231f20" }}>
+          <img src={data.productImg} alt="" />
+        </motion.div>
       </Link>
       <div className="product-info">
-        <Link className="product-link" to={`/product/${data.id}`} style={{ color: "#231f20" }}>
+        <Link className="product-link" to={`/product/${data.productSlug}`} style={{ color: "#231f20" }}>
           <div className="middle">
             <h2>{data.productName}</h2>
             <p>{data.productCategory}</p>
           </div>
         </Link>
         <div className="bottom">
-          {data.discountPercent ? <p style={{ fontSize: "20px", marginRight: "10px", textDecoration: "line-through" }}>{data.productPrice}</p> : ""}
+          {data.discountPercent ? <p style={{ fontSize: "20px", fontWeight: "300", marginRight: "10px", textDecoration: "line-through" }}>{parseFloat(data.productPrice).toFixed(2)}</p> : ""}
           <p>${data.discountPercent ? parseFloat(data.productPrice - data.productPrice * (data.discountPercent / 100)).toFixed(2) : data.productPrice}</p>
-          {data.discountPercent ? <span style={{ color: "red" }}>{data.discountPercent + "%"}</span> : ""}
+          {data.discountPercent ? <span style={{ color: "red", fontWeight: "600" }}>{data.discountPercent + "%"}</span> : ""}
           <motion.button
             whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
+            whileTap={{ scale: 0.9, backgroundColor: "#009444" }}
             onClick={() => {
               add({ ...data, quantity: quantity });
               notify();

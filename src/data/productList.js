@@ -1,3 +1,5 @@
+import defaultPackageAlt from "../assets/defaultPackageAlt.png";
+
 export const allProducts = [
   {
     id: 0,
@@ -7,7 +9,7 @@ export const allProducts = [
     discountPercent: 20,
     productCategory: "Vitamins",
     productDescription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porttitor urna placerat eros accumsan tincidunt. Ut eu accumsan urna. Donec lobortis faucibus mollis. Integer dolor.",
-    productImg: "",
+    productImg: defaultPackageAlt,
   },
   {
     id: 1,
@@ -16,7 +18,7 @@ export const allProducts = [
     productPrice: 25.99,
     productCategory: "Creatine",
     productDescription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porttitor urna placerat eros accumsan tincidunt. Ut eu accumsan urna. Donec lobortis faucibus mollis. Integer dolor.",
-    productImg: "",
+    productImg: defaultPackageAlt,
   },
   {
     id: 2,
@@ -25,6 +27,6 @@ export const allProducts = [
     productPrice: 30.99,
     productCategory: "Protein",
     productDescription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porttitor urna placerat eros accumsan tincidunt. Ut eu accumsan urna. Donec lobortis faucibus mollis. Integer dolor.",
-    productImg: "",
+    productImg: defaultPackageAlt,
   },
 ];

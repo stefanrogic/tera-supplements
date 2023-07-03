@@ -1,32 +1,23 @@
 @import "../../index.scss";
 
-.header {
-  width: 100%;
-  margin-top: 100px;
-  margin-bottom: 30px;
+h1 {
+  margin: 100px 0 30px 0;
+}
 
+.all-products-btn {
+  height: 50px;
+  width: 150px;
+  margin: 100px auto;
+
+  // ALIGN ICONS
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
 
-  h1 {
-    margin: 0;
-  }
-
-  .all-products-btn {
-    height: 50px;
-    width: 150px;
-
-    // ALIGN ICONS
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    border: none;
-    border-radius: 10px;
-    color: white;
-    background-color: #231f20;
-  }
+  border: none;
+  border-radius: 10px;
+  color: white;
+  background-color: #231f20;
 }
 
 .products {

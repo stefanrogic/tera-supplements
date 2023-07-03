@@ -10,12 +10,12 @@ const content = [
     position: "bottom",
   },
   {
-    text: "CHANGE ME",
+    text: "PROTEIN POWDERS",
     img: "https://cdn.pixabay.com/photo/2017/08/07/14/02/man-2604149_1280.jpg",
     position: "top",
   },
   {
-    text: "PLS",
+    text: "CREATINE",
     img: "https://cdn.pixabay.com/photo/2016/12/21/19/22/boxer-1923694_1280.jpg",
     position: "center",
   },
