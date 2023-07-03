@@ -4,12 +4,12 @@ import { toast } from "react-toastify";
 import { changeItemQuantity, clearCart, removeItem } from "../../redux/slices/cartSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 import ScrollToTop from "../../components/scrollToTop/ScrollToTop";
 import HighlightOffIcon from "@mui/icons-material/HighlightOff";
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
-import { Link } from "react-router-dom";
 
 const Cart = () => {
   const notify = (item) => toast.info(item ? `${item.productName} removed from the cart.` : "Cart Cleared.");
@@ -67,7 +67,9 @@ const Cart = () => {
                     <AddIcon fontSize="small" />
                   </button>
                 </div>
-                <button
+                <motion.button
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}
                   className="remove-button"
                   onClick={() => {
                     remove(item);
@@ -75,7 +77,7 @@ const Cart = () => {
                   }}
                 >
                   <HighlightOffIcon fontSize="large" />
-                </button>
+                </motion.button>
               </div>
             ))}
 
