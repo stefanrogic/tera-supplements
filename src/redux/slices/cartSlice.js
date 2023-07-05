@@ -26,7 +26,6 @@ const changeQuantity = (item, cart, quantity = 1) => {
 };
 
 const initialState = {
-  quantity: 1,
   navNum: JSON.parse(localStorage.getItem("navNum")) || 0,
   items: JSON.parse(localStorage.getItem("cart")) || [],
   totalPrice: JSON.parse(localStorage.getItem("totalPrice")) || 0,
@@ -40,7 +39,7 @@ export const cartSlice = createSlice({
       const isInCart = checkItemCart(action.payload, state.items);
 
       if (isInCart) {
-        state.items = changeQuantity(action.payload, state.items, state.quantity);
+        state.items = changeQuantity(action.payload, state.items, action.payload.quantity);
       } else {
         state.items = [...state.items, action.payload];
         state.navNum += 1;

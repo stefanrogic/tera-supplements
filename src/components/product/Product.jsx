@@ -1,7 +1,7 @@
 import "./product.scss";
+import "react-toastify/dist/ReactToastify.css";
 
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
-import "react-toastify/dist/ReactToastify.css";
 
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
@@ -47,6 +47,7 @@ const Product = ({ data }) => {
           {data.discountPercent ? <p style={{ fontSize: "20px", fontWeight: "300", marginRight: "10px", textDecoration: "line-through" }}>{parseFloat(data.productPrice).toFixed(2)}</p> : ""}
           <p>${data.discountPercent ? parseFloat(data.productPrice - data.productPrice * (data.discountPercent / 100)).toFixed(2) : data.productPrice}</p>
           {data.discountPercent ? <span style={{ color: "red", fontWeight: "600" }}>{data.discountPercent + "%"}</span> : ""}
+
           <motion.button
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9, backgroundColor: "#009444" }}

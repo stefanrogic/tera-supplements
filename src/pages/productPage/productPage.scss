@@ -1,0 +1,161 @@
+@import "../../index.scss";
+
+.product-page {
+  min-height: 91vh;
+
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+
+  .path {
+    margin-top: 130px;
+
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+
+    a {
+      margin: 0;
+      color: #231f20;
+    }
+
+    p {
+      margin: 0;
+    }
+  }
+
+  .top {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+
+    .img-div {
+      width: 50%;
+      aspect-ratio: 1 / 1;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      border-radius: 10px;
+      background-color: grey;
+
+      img {
+        height: 80%;
+      }
+    }
+
+    .product-info {
+      padding: 50px 0;
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+
+      h1 {
+        margin: 0;
+        font-size: 50px;
+        line-height: 35px;
+      }
+
+      .amount {
+        border: 1px solid grey;
+        width: 100px;
+        margin-top: 20px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        border-radius: 10px;
+      }
+
+      .price {
+        margin-top: auto;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 20px;
+
+        p {
+          margin: 0;
+        }
+      }
+
+      .buttons {
+        margin-top: 40px;
+        display: flex;
+        gap: 20px;
+        justify-content: space-between;
+        align-items: center;
+
+        .quantity {
+          height: 60px;
+
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+
+          // border: 1px solid black;
+          border-radius: 10px;
+          background-color: #231f20;
+
+          /* Chrome, Safari, Edge, Opera */
+          input::-webkit-outer-spin-button,
+          input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+          }
+
+          /* Firefox */
+          input[type="number"] {
+            -moz-appearance: textfield;
+          }
+
+          input {
+            font-size: 20px;
+            font-weight: 500;
+            text-align: center;
+            width: 25px;
+            border: none;
+            pointer-events: none;
+
+            background-color: inherit;
+            color: white;
+          }
+
+          button {
+            // width: 40px;
+            // height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            color: white;
+            background-color: transparent;
+          }
+        }
+
+        button {
+          height: 60px;
+          width: 60px;
+
+          // ALIGN ICONS
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          border: none;
+          border-radius: 50%;
+          color: white;
+          background-color: map-get($palette, darkBrown);
+        }
+
+        p {
+          font-size: 20px;
+        }
+      }
+    }
+  }
+}

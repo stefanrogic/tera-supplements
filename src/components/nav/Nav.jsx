@@ -67,10 +67,13 @@ const Nav = () => {
                     <div className="product-img">
                       <img src={item.productImg} alt="" />
                     </div>
-                    <p style={{ marginLeft: "20px", fontSize: "18px" }}>{item.productName}</p>
-                    <p style={{ margin: "0 0 0 10px", fontWeight: "500" }}> x{item.quantity} </p>
+                    <div className="product-info">
+                      <p style={{ fontWeight: "500" }}>{item.productName}</p>
+                      <p style={{ fontWeight: "300" }}> quantity: {item.quantity} </p>
+                    </div>
+
                     <p className="price" style={{ fontSize: "25px", fontWeight: "600", margin: "0 0 0 auto" }}>
-                      ${item.discountPercent ? parseFloat((item.productPrice - item.productPrice * (item.discountPercent / 100)) * item.quantity).toFixed(2) : item.productPrice * item.quantity}
+                      ${item.discountPercent ? parseFloat(item.productPrice - item.productPrice * (item.discountPercent / 100)).toFixed(2) : item.productPrice}
                     </p>
                   </Link>
                 ))}
@@ -79,7 +82,7 @@ const Nav = () => {
                   <p style={{ fontSize: "30px", margin: "0", fontWeight: "600" }}>$ {String(parseFloat(cart.totalPrice).toFixed(2))}</p>
                 </div>
                 <Link to="/cart">
-                  <button onClick={() => setShowCartDropdown(false)}>CART</button>
+                  <button onClick={() => setShowCartDropdown(false)}>VIEW CART</button>
                 </Link>
               </motion.div>
             </div>
