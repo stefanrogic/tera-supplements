@@ -4,10 +4,11 @@ import Home from "./pages/home/Home";
 import Nav from "./components/nav/Nav";
 import Footer from "./components/footer/Footer";
 import Cart from "./pages/cart/Cart";
+import ProductPage from "./pages/productPage/ProductPage";
+import Product from "./pages/products/Products";
 
 import { ToastContainer } from "react-toastify";
 import { createBrowserRouter, createRoutesFromElements, Outlet, Route, RouterProvider } from "react-router-dom";
-import ProductPage from "./pages/productPage/ProductPage";
 
 function App() {
   const Root = () => (
@@ -25,6 +26,7 @@ function App() {
         <Route index element={<Home />}></Route>
         <Route path="/cart" element={<Cart />}></Route>
         <Route path="/product/:id" element={<ProductPage />}></Route>
+        <Route path="/products/:id" element={<Product />}></Route>
       </Route>
     )
   );

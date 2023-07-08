@@ -25,21 +25,11 @@ const Nav = () => {
             <h2 style={{ color: "#231f20" }}>TERA</h2>
           </Link>
           <ul>
-            <li>
-              <a href="#">PROTEIN</a>
-            </li>
-            <li>
-              <a href="#">CREATINE</a>
-            </li>
-            <li>
-              <a href="#">VITAMINS</a>
-            </li>
-            <li>
-              <a href="#">FOOD</a>
-            </li>
-            <li>
-              <a href="#">CLOTHING</a>
-            </li>
+            {["PROTEIN", "CREATINE", "VITAMINS", "FOOD", "CLOTHING"].map((a, i) => (
+              <li key={i}>
+                <Link to={`/products/${a.toLowerCase()}`}>{a}</Link>
+              </li>
+            ))}
           </ul>
 
           <Link to="/cart">

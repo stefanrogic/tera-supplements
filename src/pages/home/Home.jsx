@@ -6,6 +6,7 @@ import Banner from "../../components/banner/Banner";
 import Products from "../../components/products/Products";
 
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
@@ -14,9 +15,11 @@ const Home = () => {
       <div className="default-margin">
         <ul>
           {["PROTEIN", "CREATINE", "VITAMINS", "FOOD", "CLOTHING"].map((a, i) => (
-            <motion.a key={i} href="#" whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9, backgroundColor: "#231f20" }}>
-              <li>{a}</li>
-            </motion.a>
+            <Link key={i} to={`/products/${a.toLowerCase()}`}>
+              <motion.div key={i} href="#" whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9, backgroundColor: "#231f20" }}>
+                <li>{a}</li>
+              </motion.div>
+            </Link>
           ))}
         </ul>
       </div>
