@@ -1,6 +1,6 @@
 import "./productPage.scss";
 
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { allProducts } from "../../data/productList";
 import { motion } from "framer-motion";
 
@@ -29,13 +29,13 @@ const ProductPage = () => {
     <>
       <ScrollToTop />
       <div className="default-margin">
-        <div className="product-page">
+        <motion.div className="product-page" initial={{ opacity: 0, x: -100 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }}>
           <div className="path">
-            <a href="/products">Products</a>
+            <Link to="/products">Products</Link>
             <p>{">"}</p>
-            <a href={`/products}`}>{product.productCategory}</a>
+            <Link to={`/products/categories/${product.productCategory.toLowerCase()}`}>{product.productCategory}</Link>
             <p>{">"}</p>
-            <a href={`/product/${product.productSlug}`}>{product.productName}</a>
+            <Link to={`/products/categories/${product.productCategory.toLowerCase()}/${product.productSlug}`}>{product.productName}</Link>
           </div>
           <div className="top">
             <div className="img-div">
@@ -80,7 +80,7 @@ const ProductPage = () => {
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </>
   );

@@ -27,7 +27,7 @@ const Nav = () => {
           <ul>
             {["PROTEIN", "CREATINE", "VITAMINS", "FOOD", "CLOTHING"].map((a, i) => (
               <li key={i}>
-                <Link to={`/products/${a.toLowerCase()}`}>{a}</Link>
+                <Link to={`/products/categories/${a.toLowerCase()}`}>{a}</Link>
               </li>
             ))}
           </ul>
@@ -47,7 +47,7 @@ const Nav = () => {
                 {/* <h2 style={{ margin: "20px 20px 30px 20px" }}>YOUR CART</h2> */}
                 {cart.items.map((item, i) => (
                   <Link
-                    to={`/product/${item.productSlug}`}
+                    to={`/products/categories/${item.productCategory.toLowerCase()}/${item.productSlug}`}
                     className="product"
                     key={i}
                     onClick={() => {

@@ -10,6 +10,7 @@ export const allProducts = [
     productCategory: "Vitamins",
     productDescription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porttitor urna placerat eros accumsan tincidunt. Ut eu accumsan urna. Donec lobortis faucibus mollis. Integer dolor.",
     productImg: defaultPackageAlt,
+    productFilter: "$20 - $30",
   },
   {
     id: 1,
@@ -19,6 +20,7 @@ export const allProducts = [
     productCategory: "Creatine",
     productDescription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porttitor urna placerat eros accumsan tincidunt. Ut eu accumsan urna. Donec lobortis faucibus mollis. Integer dolor.",
     productImg: defaultPackageAlt,
+    productFilter: "$20 - $30",
   },
   {
     id: 2,
@@ -28,5 +30,37 @@ export const allProducts = [
     productCategory: "Protein",
     productDescription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porttitor urna placerat eros accumsan tincidunt. Ut eu accumsan urna. Donec lobortis faucibus mollis. Integer dolor.",
     productImg: defaultPackageAlt,
+    productFilter: "$30 - $40",
+  },
+
+  {
+    id: 3,
+    productName: "Rice Protein Isolate",
+    productSlug: "rice-protein",
+    productPrice: 23.99,
+    productCategory: "Protein",
+    productDescription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porttitor urna placerat eros accumsan tincidunt. Ut eu accumsan urna. Donec lobortis faucibus mollis. Integer dolor.",
+    productImg: defaultPackageAlt,
+    productFilter: "$20 - $30",
+  },
+  {
+    id: 4,
+    productName: "Whey Protein Isolate",
+    productSlug: "whey-protein",
+    productPrice: 26.99,
+    productCategory: "Protein",
+    productDescription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porttitor urna placerat eros accumsan tincidunt. Ut eu accumsan urna. Donec lobortis faucibus mollis. Integer dolor.",
+    productImg: defaultPackageAlt,
+    productFilter: "$20 - $30",
+  },
+  {
+    id: 5,
+    productName: "Hemp Protein",
+    productSlug: "whey-protein",
+    productPrice: 28.99,
+    productCategory: "Protein",
+    productDescription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porttitor urna placerat eros accumsan tincidunt. Ut eu accumsan urna. Donec lobortis faucibus mollis. Integer dolor.",
+    productImg: defaultPackageAlt,
+    productFilter: "$20 - $30",
   },
 ];

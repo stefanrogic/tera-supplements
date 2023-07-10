@@ -19,7 +19,7 @@ const Products = () => {
     <motion.div ref={ref} className="default-margin" animate={isInView ? "visible" : "hidden"} variants={variants} transition={{ duration: 0.5 }}>
       <h1>OUR PRODUCTS</h1>
 
-      <div className="products">
+      <div className="products" style={{ marginTop: "0" }}>
         {allProducts.map((product, i) => (
           <Product data={product} key={i} />
         ))}

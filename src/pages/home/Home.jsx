@@ -15,10 +15,10 @@ const Home = () => {
       <div className="default-margin">
         <ul>
           {["PROTEIN", "CREATINE", "VITAMINS", "FOOD", "CLOTHING"].map((a, i) => (
-            <Link key={i} to={`/products/${a.toLowerCase()}`}>
-              <motion.div key={i} href="#" whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9, backgroundColor: "#231f20" }}>
-                <li>{a}</li>
-              </motion.div>
+            <Link key={i} to={`/products/categories/${a.toLowerCase()}`}>
+              <motion.li key={i} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9, backgroundColor: "#231f20" }}>
+                {a}
+              </motion.li>
             </Link>
           ))}
         </ul>

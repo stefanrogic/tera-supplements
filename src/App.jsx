@@ -25,8 +25,10 @@ function App() {
       <Route path="/" element={<Root />}>
         <Route index element={<Home />}></Route>
         <Route path="/cart" element={<Cart />}></Route>
-        <Route path="/product/:id" element={<ProductPage />}></Route>
-        <Route path="/products/:id" element={<Product />}></Route>
+        {/* <Route path="/product/:id" element={<ProductPage />}></Route> */}
+        <Route path="/products/categories" element={<Product />}></Route>
+        <Route path="/products/categories/:id" element={<Product />}></Route>
+        <Route path="/products/categories/:id/:id" element={<ProductPage />}></Route>
       </Route>
     )
   );

@@ -31,13 +31,13 @@ const Product = ({ data }) => {
 
   return (
     <motion.div ref={ref} className="product-container" animate={isInView ? "visible" : "hidden"} variants={variants} transition={{ duration: 0.5 }}>
-      <Link className="product-link" to={`/product/${data.productSlug}`}>
+      <Link className="product-link" to={`/products/categories/${data.productCategory.toLowerCase()}/${data.productSlug}`}>
         <motion.div className="img-div" whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.9, backgroundColor: "#231f20" }}>
           <img src={data.productImg} alt="" />
         </motion.div>
       </Link>
       <div className="product-info">
-        <Link className="product-link" to={`/product/${data.productSlug}`} style={{ color: "#231f20" }}>
+        <Link className="product-link" to={`/products/categories/${data.productCategory.toLowerCase()}/${data.productSlug}`} style={{ color: "#231f20" }}>
           <div className="middle">
             <h2>{data.productName}</h2>
             <p>{data.productCategory}</p>
