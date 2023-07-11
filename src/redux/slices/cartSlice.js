@@ -6,20 +6,22 @@ const calculateTotal = (items) => {
   let total = 0;
 
   items.map((item) => {
-    total += item.productPrice * item.quantity;
+    const price = item.discountPercent ? item.productPrice - item.productPrice * (item.discountPercent / 100) : item.productPrice;
+
+    total += price * item.quantity;
   });
 
   return total;
 };
 
 const checkItemCart = (item, cart) => {
-  const found = cart.find((a) => a.id === item.id);
+  const found = cart.find((a) => a.productSlug === item.productSlug);
   return cart.includes(found);
 };
 
 const changeQuantity = (item, cart, quantity = 1) => {
   return cart.map((a) => {
-    if (a.id === item.id) {
+    if (a.productSlug === item.productSlug) {
       return { ...a, quantity: a.quantity + quantity };
     } else return a;
   });
@@ -56,7 +58,7 @@ export const cartSlice = createSlice({
       setLocalStorage("cart", JSON.stringify(state.items));
     },
     removeItem: (state, action) => {
-      const newArr = state.items.filter((a) => a.id !== action.payload.id);
+      const newArr = state.items.filter((a) => a.productSlug !== action.payload.productSlug);
 
       state.items = [...newArr];
       state.navNum -= 1;
@@ -86,7 +88,7 @@ export const cartSlice = createSlice({
       // changeQuantity(action.payload.item, state.items, action.payload.quantity);
 
       const newArr = state.items.map((a) => {
-        if (a.id === action.payload.item.id) {
+        if (a.productSlug === action.payload.item.productSlug) {
           return { ...a, quantity: action.payload.quantity };
         } else return a;
       });

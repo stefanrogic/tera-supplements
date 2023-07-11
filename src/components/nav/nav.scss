@@ -100,7 +100,7 @@ nav {
       }
     }
     .cart-dropdown {
-      width: 400px;
+      width: 450px;
 
       top: 25px;
       right: -10px;
@@ -128,6 +128,9 @@ nav {
         border-radius: 10px;
         border: 1px solid rgb(224, 224, 224);
         background-color: white;
+
+        max-height: 70vh;
+        overflow: auto;
 
         .product {
           display: flex;

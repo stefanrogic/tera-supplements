@@ -5,7 +5,7 @@ import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 
 import { toast } from "react-toastify";
 
@@ -25,7 +25,6 @@ const Product = ({ data }) => {
   const isInView = useInView(ref, { once: true });
 
   // const cart = useSelector((state) => state.cartItems.items);
-  const quantity = useSelector((state) => state.cartItems.quantity);
   const dispatch = useDispatch();
   const add = (product) => dispatch(addItem(product));
 
@@ -40,7 +39,7 @@ const Product = ({ data }) => {
         <Link className="product-link" to={`/products/categories/${data.productCategory.toLowerCase()}/${data.productSlug}`} style={{ color: "#231f20" }}>
           <div className="middle">
             <h2>{data.productName}</h2>
-            <p>{data.productCategory}</p>
+            <p>{data.volume ? data.volume : "1000g"}</p>
           </div>
         </Link>
         <div className="bottom">
@@ -52,7 +51,7 @@ const Product = ({ data }) => {
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9, backgroundColor: "#009444" }}
             onClick={() => {
-              add({ ...data, quantity: quantity });
+              add({ ...data, quantity: 1 });
               notify();
             }}
           >

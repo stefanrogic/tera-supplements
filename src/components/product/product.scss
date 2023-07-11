@@ -3,15 +3,19 @@
 .product-container {
   display: flex;
   flex-direction: column;
+  flex: 0 0 320px;
+
+  flex-shrink: 1;
+  flex-basis: 320px;
 
   color: black;
 
   @include mobile {
-    flex: 0 0 100%;
+    flex-grow: 1;
   }
 
   @include tablet {
-    flex: 0 0 320px;
+    flex-grow: 0;
   }
 
   .img-div {

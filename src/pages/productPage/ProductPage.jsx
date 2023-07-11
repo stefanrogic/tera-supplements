@@ -47,7 +47,7 @@ const ProductPage = () => {
               <p style={{ fontSize: "20px", fontWeight: "300", color: "grey" }}>{product.productDescription}</p>
 
               <div className="amount">
-                <p>{product.productAmount || "1000g"}</p>
+                <p>{product.volume || "1000g"}</p>
               </div>
 
               <div className="price">

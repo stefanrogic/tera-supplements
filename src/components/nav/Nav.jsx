@@ -58,7 +58,9 @@ const Nav = () => {
                       <img src={item.productImg} alt="" />
                     </div>
                     <div className="product-info">
-                      <p style={{ fontWeight: "500" }}>{item.productName}</p>
+                      <p style={{ fontWeight: "500" }}>
+                        {item.productName} {item.volume}
+                      </p>
                       <p style={{ fontWeight: "300" }}> quantity: {item.quantity} </p>
                     </div>
 

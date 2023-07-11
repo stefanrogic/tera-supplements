@@ -254,13 +254,22 @@
       height: 70px;
       background-color: #231f20;
       color: #ffffff;
-      // margin: 0 0 0 auto;
-      padding-left: 15px;
-      margin-top: 20px;
 
       @include rwd("800px") {
         margin: 0 0 0 auto;
       }
+    }
+  }
+
+  a {
+    .continue-btn {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 250px;
+      height: 70px;
+      background-color: #231f20;
+      color: #ffffff;
     }
   }
 
