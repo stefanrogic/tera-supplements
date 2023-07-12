@@ -1,7 +1,7 @@
 import "./cart.scss";
 
 import { toast } from "react-toastify";
-import { changeItemQuantity, removeItem } from "../../redux/slices/cartSlice";
+import { changeItemQuantity, removeItem, clearCart } from "../../redux/slices/cartSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
@@ -18,13 +18,18 @@ const Cart = () => {
   const notify = (item) => toast.info(item ? `${item.productName} removed from the cart.` : "Cart Cleared.");
 
   const [showCheckout, setShowCheckout] = useState(false);
+  const [purchaseComplete, setPurchaseComplete] = useState(false);
 
   const cart = useSelector((state) => state.cartItems);
+
   //   const total = useSelector((state) => state.cartItems.totalPrice);
 
   const dispatch = useDispatch();
   const remove = (product) => dispatch(removeItem(product));
-  // const clear = () => dispatch(clearCart());
+  const clear = () => {
+    dispatch(clearCart());
+    setPurchaseComplete(true);
+  };
   const changeQt = (item, quantity) => dispatch(changeItemQuantity({ item: item, quantity: quantity }));
 
   return (
@@ -35,15 +40,24 @@ const Cart = () => {
           {cart.items.length > 0 ? (
             <>
               {showCheckout && (
-                <div className="checkout-window">
-                  <div className="top"></div>
+                <motion.div className="checkout-window" key={showCheckout} initial={{ opacity: 0 }} animate={{ opacity: 100 }} transition={{ duration: 0.5 }}>
+                  <div className="top">
+                    <button onClick={() => setShowCheckout(false)}>X</button>
+                  </div>
                   <div className="center"></div>
                   <div className="bottom">
-                    <motion.button whileHover={{ scale: 1.1, backgroundColor: "#383334", color: "#ffffff" }} whileTap={{ scale: 0.9, backgroundColor: "#009444" }}>
-                      BUY
+                    <motion.button
+                      whileHover={{ scale: 1.1, backgroundColor: "#383334", color: "#ffffff" }}
+                      whileTap={{ scale: 0.9, backgroundColor: "#009444" }}
+                      onClick={() => {
+                        clear();
+                        setShowCheckout(false);
+                      }}
+                    >
+                      CONFIRM ORDER
                     </motion.button>
                   </div>
-                </div>
+                </motion.div>
               )}
               <div className="cart-items">
                 <h2 className="cart-head">YOUR CART</h2>
@@ -106,10 +120,24 @@ const Cart = () => {
                 <p className="total-par">TOTAL:</p>
                 <p className="price-value">$ {String(parseFloat(cart.totalPrice).toFixed(2))}</p>
 
-                <motion.button className="checkout-btn" whileHover={{ scale: 1.1, backgroundColor: "#383334", color: "#ffffff" }} whileTap={{ scale: 0.9, backgroundColor: "#009444" }} onClick={()=> setShowCheckout(true)}>
+                <motion.button className="checkout-btn" whileHover={{ scale: 1.1, backgroundColor: "#383334", color: "#ffffff" }} whileTap={{ scale: 0.9, backgroundColor: "#009444" }} onClick={() => setShowCheckout(true)}>
                   CHECKOUT
                 </motion.button>
               </div>
+            </>
+          ) : purchaseComplete ? (
+            <>
+              <p></p>
+              <>
+                <h1 style={{ margin: "130px auto 20px auto", display: "flex", alignItems: "center", gap: "30px", fontSize: "70px" }}>Order Complete</h1>
+                <h1 style={{ margin: "0 auto 50px auto", display: "flex", alignItems: "center", gap: "30px" }}>Thank You for Shopping With Us!</h1>
+                {/* TODO: MAKE CATEGORIES PAGE AND CHANGE LINK TO IT */}
+                <Link to="/" style={{ margin: "0 auto" }}>
+                  <motion.button className="continue-btn" whileHover={{ scale: 1.1, backgroundColor: "#383334", color: "#ffffff" }} whileTap={{ scale: 0.9, backgroundColor: "#009444" }}>
+                    BACK TO STORE
+                  </motion.button>
+                </Link>
+              </>
             </>
           ) : (
             <>

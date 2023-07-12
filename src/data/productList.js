@@ -5,34 +5,6 @@ const convertGoogleDriveLink = (link) => `https://drive.google.com/uc?export=vie
 //! FIX: SAME PRODUCTS WITH DIFFERENT VOLUMES SHOULD HAVE ONE OBJECT INSTEAD OF MULTIPLE
 export const allProducts = [
   {
-    productName: "Vitamin C",
-    productSlug: "vitamin-c-120",
-    productPrice: 40.99,
-    discountPercent: 20,
-    volume: "120 Capsules",
-    productCategory: "Vitamins",
-    productDescription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porttitor urna placerat eros accumsan tincidunt. Ut eu accumsan urna. Donec lobortis faucibus mollis. Integer dolor.",
-    productImg: convertGoogleDriveLink("https://drive.google.com/file/d/1zgr5Y-jGcj6RXjucW0-J5-4DFPZQEBbq/view?usp=drive_link"),
-    productFilter: [
-      { filter: "price", value: "$30 - $40" },
-      { filter: "volume", value: "120 tablets/capsules" },
-    ],
-  },
-  {
-    productName: "Vitamin C",
-    productSlug: "vitamin-c-60",
-    productPrice: 20.99,
-    discountPercent: 20,
-    volume: "60 Capsules",
-    productCategory: "Vitamins",
-    productDescription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porttitor urna placerat eros accumsan tincidunt. Ut eu accumsan urna. Donec lobortis faucibus mollis. Integer dolor.",
-    productImg: convertGoogleDriveLink("https://drive.google.com/file/d/1Ulsa5i_mZz5YDgrsxbA6kU2ll1sHs-SA/view?usp=drive_link"),
-    productFilter: [
-      { filter: "price", value: "$10 - $20" },
-      { filter: "volume", value: "60 tablets/capsules" },
-    ],
-  },
-  {
     productName: "Vitamin D 2500 IU",
     productSlug: "vitamin-d-2500-120",
     productPrice: 45.99,
@@ -47,19 +19,48 @@ export const allProducts = [
     ],
   },
   {
-    productName: "Vitamin D 2500 IU",
-    productSlug: "vitamin-d-2500-60",
-    productPrice: 25.99,
+    productName: "Vitamin C",
+    productSlug: "vitamin-c-120",
+    productPrice: 40.99,
+    discountPercent: 20,
+    volume: "120 Capsules",
+    productCategory: "Vitamins",
+    productDescription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porttitor urna placerat eros accumsan tincidunt. Ut eu accumsan urna. Donec lobortis faucibus mollis. Integer dolor.",
+    productImg: convertGoogleDriveLink("https://drive.google.com/file/d/1zgr5Y-jGcj6RXjucW0-J5-4DFPZQEBbq/view?usp=drive_link"),
+    productFilter: [
+      { filter: "price", value: "$40 - $50" },
+      { filter: "volume", value: "120 tablets/capsules" },
+    ],
+  },
+  {
+    productName: "Vitamin D 5000 IU",
+    productSlug: "vitamin-d-5000-60",
+    productPrice: 29.99,
     discountPercent: 20,
     volume: "60 Capsules",
     productCategory: "Vitamins",
     productDescription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porttitor urna placerat eros accumsan tincidunt. Ut eu accumsan urna. Donec lobortis faucibus mollis. Integer dolor.",
-    productImg: convertGoogleDriveLink("https://drive.google.com/file/d/1FKKH4_QlNaqbC9b6vT4_CPYkRDTZQ0Yo/view?usp=drive_link"),
+    productImg: convertGoogleDriveLink("https://drive.google.com/file/d/1RB0DAmiNJzpSxJ0iCo1kXSA9YKcDy7uR/view?usp=drive_link"),
     productFilter: [
-      { filter: "price", value: "$10 - $20" },
+      { filter: "price", value: "$20 - $30" },
       { filter: "volume", value: "60 tablets/capsules" },
     ],
   },
+  {
+    productName: "Vitamin C",
+    productSlug: "vitamin-c-90",
+    productPrice: 24.99,
+    discountPercent: 20,
+    volume: "90 Capsules",
+    productCategory: "Vitamins",
+    productDescription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porttitor urna placerat eros accumsan tincidunt. Ut eu accumsan urna. Donec lobortis faucibus mollis. Integer dolor.",
+    productImg: convertGoogleDriveLink("https://drive.google.com/file/d/1Ulsa5i_mZz5YDgrsxbA6kU2ll1sHs-SA/view?usp=drive_link"),
+    productFilter: [
+      { filter: "price", value: "$10 - $20" },
+      { filter: "volume", value: "90 tablets/capsules" },
+    ],
+  },
+
   {
     productName: "Creatine Monohydrate",
     productSlug: "creatine-monohydrate-powder-500",
@@ -73,6 +74,7 @@ export const allProducts = [
       { filter: "weight", value: "500g" },
     ],
   },
+
   {
     productName: "Creatine Monohydrate",
     productSlug: "creatine-monohydrate-powder-300",

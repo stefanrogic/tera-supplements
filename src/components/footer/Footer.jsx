@@ -6,8 +6,15 @@ const Footer = () => {
     <footer>
       <div className="default-margin">
         <div className="top">
-          <div className="left"></div>
-          <div className="center">
+          <div className="left">
+            <h2>
+              Built by{" "}
+              <a href="https://github.com/Rasgrin" target="_blank" rel="noreferrer">
+                Stefan Rogic
+              </a>
+            </h2>
+          </div>
+          <div className="right">
             <h1>PRODUCTS</h1>
             <ul>
               {["PROTEIN", "CREATINE", "VITAMINS", "FOOD", "CLOTHING"].map((a, i) => (
@@ -15,20 +22,6 @@ const Footer = () => {
                   <Link to={`/products/categories/${a.toLowerCase()}`}>{a}</Link>
                 </li>
               ))}
-            </ul>
-          </div>
-          <div className="right">
-            <h1>COMPANY INFORMATION</h1>
-            <ul>
-              <li>
-                <a href="#">ABOUT US</a>
-              </li>
-              <li>
-                <a href="#">PRIVACY POLICY</a>
-              </li>
-              <li>
-                <a href="#">TERMS AND CONDITIONS</a>
-              </li>
             </ul>
           </div>
         </div>

@@ -14,6 +14,7 @@ function App() {
   const Root = () => (
     <>
       <ToastContainer style={{ marginTop: "100px" }} />
+
       <Nav />
       <Outlet />
       <Footer />

@@ -3,10 +3,10 @@ import "./products.scss";
 import { Link, useParams } from "react-router-dom";
 import { allProducts } from "../../data/productList";
 import { motion } from "framer-motion";
-
-import Product from "../../components/product/Product";
 import { useState } from "react";
 import { filters } from "../../data/filters";
+import Product from "../../components/product/Product";
+
 import ScrollToTop from "../../components/scrollToTop/ScrollToTop";
 
 const Products = () => {

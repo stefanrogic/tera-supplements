@@ -13,6 +13,7 @@ import ScrollToTop from "../../components/scrollToTop/ScrollToTop";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
+import BestSellers from "../../components/bestSellers/BestSellers";
 
 const ProductPage = () => {
   const { id } = useParams();
@@ -81,6 +82,7 @@ const ProductPage = () => {
             </div>
           </div>
         </motion.div>
+        <BestSellers />
       </div>
     </>
   );

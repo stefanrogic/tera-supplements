@@ -62,7 +62,7 @@ const HeroContent = ({ contentPage }) => {
           alignItems: "center",
         }}
       >
-        <h2 style={{ fontSize: "70px", color: "white", textAlign: "center" }}>{content.find((_, i) => i === contentPage).text}</h2>
+        <h2 style={{ fontSize: "50px", color: "white", textAlign: "center" }}>{content.find((_, i) => i === contentPage).text}</h2>
       </motion.div>
     </Link>
   );
