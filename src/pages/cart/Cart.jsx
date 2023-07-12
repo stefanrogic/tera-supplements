@@ -5,6 +5,7 @@ import { changeItemQuantity, removeItem } from "../../redux/slices/cartSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 import ScrollToTop from "../../components/scrollToTop/ScrollToTop";
 import HighlightOffIcon from "@mui/icons-material/HighlightOff";
@@ -15,6 +16,8 @@ import RemoveShoppingCartIcon from "@mui/icons-material/RemoveShoppingCart";
 
 const Cart = () => {
   const notify = (item) => toast.info(item ? `${item.productName} removed from the cart.` : "Cart Cleared.");
+
+  const [showCheckout, setShowCheckout] = useState(false);
 
   const cart = useSelector((state) => state.cartItems);
   //   const total = useSelector((state) => state.cartItems.totalPrice);
@@ -31,6 +34,17 @@ const Cart = () => {
         <motion.div className="cart" initial={{ opacity: 0, x: -100 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }}>
           {cart.items.length > 0 ? (
             <>
+              {showCheckout && (
+                <div className="checkout-window">
+                  <div className="top"></div>
+                  <div className="center"></div>
+                  <div className="bottom">
+                    <motion.button whileHover={{ scale: 1.1, backgroundColor: "#383334", color: "#ffffff" }} whileTap={{ scale: 0.9, backgroundColor: "#009444" }}>
+                      BUY
+                    </motion.button>
+                  </div>
+                </div>
+              )}
               <div className="cart-items">
                 <h2 className="cart-head">YOUR CART</h2>
 
@@ -92,7 +106,7 @@ const Cart = () => {
                 <p className="total-par">TOTAL:</p>
                 <p className="price-value">$ {String(parseFloat(cart.totalPrice).toFixed(2))}</p>
 
-                <motion.button className="checkout-btn" whileHover={{ scale: 1.1, backgroundColor: "#383334", color: "#ffffff" }} whileTap={{ scale: 0.9, backgroundColor: "#009444" }}>
+                <motion.button className="checkout-btn" whileHover={{ scale: 1.1, backgroundColor: "#383334", color: "#ffffff" }} whileTap={{ scale: 0.9, backgroundColor: "#009444" }} onClick={()=> setShowCheckout(true)}>
                   CHECKOUT
                 </motion.button>
               </div>
@@ -105,7 +119,7 @@ const Cart = () => {
               {/* TODO: MAKE CATEGORIES PAGE AND CHANGE LINK TO IT */}
               <Link to="/products/categories/protein" style={{ margin: "0 auto" }}>
                 <motion.button className="continue-btn" whileHover={{ scale: 1.1, backgroundColor: "#383334", color: "#ffffff" }} whileTap={{ scale: 0.9, backgroundColor: "#009444" }}>
-                  CONTINUO SHOPPING
+                  CONTINUE SHOPPING
                 </motion.button>
               </Link>
             </>

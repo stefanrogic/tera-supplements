@@ -1,6 +1,7 @@
 @import "../../index.scss";
 
 .cart {
+  position: relative;
   margin-top: 130px;
   // min-height: 90vh;
   width: 100%;
@@ -16,6 +17,41 @@
 
   .default-margin {
     width: inherit;
+  }
+
+  .checkout-window {
+    position: fixed;
+    height: 700px;
+    width: 500px;
+
+    left: 50%;
+    transform: translate(-50%, 0);
+
+    border-radius: 10px;
+    border: 1px solid black;
+    background-color: white;
+
+    display: flex;
+    flex-direction: column;
+
+    .bottom {
+      margin-top: auto;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 40px 40px;
+
+      button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 70px;
+        background-color: #231f20;
+        color: #ffffff;
+      }
+    }
   }
 
   .cart-items {
