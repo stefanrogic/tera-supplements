@@ -36,7 +36,7 @@ const Cart = () => {
 
                 {cart.items.map((item, i) => (
                   <div key={i} className="product">
-                    <Link to={`/product/${item.productSlug}`}>
+                    <Link to={`/products/categories/${item.productCategory.toLowerCase()}}/${item.productSlug}`}>
                       <div className="img-div">
                         <img src={item.productImg} alt="" />
                       </div>
