@@ -1,6 +1,8 @@
+@import "../../index.scss";
+
 .home-banner {
   margin-top: 100px;
-  height: 350px;
+  min-height: 350px;
 
   display: flex;
   flex-direction: row;
@@ -14,10 +16,26 @@
   background-position: center;
   // background-repeat: no-repeat;
 
+  text-align: center;
+
   cursor: pointer;
 
   h1 {
     margin: 0;
+    width: 80%;
+
     color: white;
+
+    @include mobile {
+      font-size: 30px;
+    }
+
+    @include tablet {
+      font-size: 40px;
+    }
+
+    @include desktop {
+      font-size: 50px;
+    }
   }
 }

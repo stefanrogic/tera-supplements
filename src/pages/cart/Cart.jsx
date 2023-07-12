@@ -93,7 +93,7 @@ const Cart = () => {
                 <p className="price-value">$ {String(parseFloat(cart.totalPrice).toFixed(2))}</p>
 
                 <motion.button className="checkout-btn" whileHover={{ scale: 1.1, backgroundColor: "#383334", color: "#ffffff" }} whileTap={{ scale: 0.9, backgroundColor: "#009444" }}>
-                  Checkout
+                  CHECKOUT
                 </motion.button>
               </div>
             </>
@@ -105,7 +105,7 @@ const Cart = () => {
               {/* TODO: MAKE CATEGORIES PAGE AND CHANGE LINK TO IT */}
               <Link to="/products/categories/protein" style={{ margin: "0 auto" }}>
                 <motion.button className="continue-btn" whileHover={{ scale: 1.1, backgroundColor: "#383334", color: "#ffffff" }} whileTap={{ scale: 0.9, backgroundColor: "#009444" }}>
-                  Continue Shopping
+                  CONTINUO SHOPPING
                 </motion.button>
               </Link>
             </>

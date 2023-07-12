@@ -9,6 +9,7 @@ import { motion } from "framer-motion";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import MenuIcon from "@mui/icons-material/Menu";
 import { useState } from "react";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 const Nav = () => {
   const [showCartDropdown, setShowCartDropdown] = useState(false);
@@ -55,11 +56,11 @@ const Nav = () => {
                     }}
                   >
                     <div className="product-img">
-                      <img src={item.productImg} alt="" />
+                      <LazyLoadImage src={item.productImg} key={item.productImg} effect="blur" placeholderSrc={`http://localhost:5173/${item.productImg}`} />
                     </div>
                     <div className="product-info">
                       <p style={{ fontWeight: "500" }}>
-                        {item.productName} {item.volume}
+                        {item.productName} - {item.volume}
                       </p>
                       <p style={{ fontWeight: "300" }}> quantity: {item.quantity} </p>
                     </div>

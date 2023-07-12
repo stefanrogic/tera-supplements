@@ -11,6 +11,7 @@ import { toast } from "react-toastify";
 
 import { addItem } from "../../redux/slices/cartSlice";
 import { Link } from "react-router-dom";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 const variants = {
   hidden: { opacity: 0, x: -100 },
@@ -32,7 +33,8 @@ const Product = ({ data }) => {
     <motion.div ref={ref} className="product-container" animate={isInView ? "visible" : "hidden"} variants={variants} transition={{ duration: 0.5 }}>
       <Link className="product-link" to={`/products/categories/${data.productCategory.toLowerCase()}/${data.productSlug}`}>
         <motion.div className="img-div" whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.9, backgroundColor: "#231f20" }}>
-          <img src={data.productImg} alt="" />
+          <LazyLoadImage src={data.productImg} key={data.productImg} effect="blur" placeholderSrc={`http://localhost:5173/${data.productImg}`} />
+          {/* <img src={data.productImg} alt={`http://localhost:5173/${data.productImg}`} loading="lazy" /> */}
         </motion.div>
       </Link>
       <div className="product-info">

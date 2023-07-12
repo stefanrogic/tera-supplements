@@ -39,11 +39,11 @@ const ProductPage = () => {
           </div>
           <div className="top">
             <div className="img-div">
-              <img src={product.productImg} alt="" />
+              <img src={product.productImg} alt={`http://localhost:5173/${product.productImg}`} />
             </div>
             <div className="product-info">
               <h1>{product.productName}</h1>
-              <p style={{ fontSize: "30px" }}>{product.productCategory}</p>
+              <p style={{ fontSize: "30px", margin: "0" }}>{product.productCategory}</p>
               <p style={{ fontSize: "20px", fontWeight: "300", color: "grey" }}>{product.productDescription}</p>
 
               <div className="amount">

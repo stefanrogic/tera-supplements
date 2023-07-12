@@ -26,14 +26,23 @@
   }
 
   .top {
+    width: inherit;
     margin-top: 30px;
     display: flex;
-    flex-direction: row;
+
     gap: 50px;
 
+    @include mobile {
+      flex-direction: column;
+    }
+
+    @include rwd("1000px") {
+      flex-direction: row;
+    }
+
     .img-div {
-      width: 50%;
       aspect-ratio: 1 / 1;
+      height: inherit;
 
       display: flex;
       justify-content: center;
@@ -43,20 +52,45 @@
       background-color: grey;
 
       img {
-        height: 80%;
+        @include mobile {
+          height: 50%;
+        }
+
+        @include tablet {
+          height: 70%;
+        }
+
+        @include rwd("1300px") {
+          height: 80%;
+        }
+      }
+
+      @include mobile {
+        width: 100%;
+      }
+
+      @include rwd("1300px") {
+        width: 50%;
       }
     }
 
     .product-info {
-      padding: 50px 0;
-      width: 50%;
       display: flex;
       flex-direction: column;
+
+      @include mobile {
+        width: 100%;
+      }
+
+      @include rwd("1300px") {
+        width: 50%;
+        padding: 50px 0;
+      }
 
       h1 {
         margin: 0;
         font-size: 50px;
-        line-height: 35px;
+        // line-height: 35px;
       }
 
       .amount {
@@ -77,8 +111,19 @@
         margin-top: auto;
         display: flex;
         justify-content: flex-start;
-        align-items: center;
-        gap: 20px;
+        flex-wrap: wrap;
+
+        @include mobile {
+          margin-top: 30px;
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        @include tablet {
+          flex-direction: row;
+          align-items: center;
+          gap: 20px;
+        }
 
         p {
           margin: 0;
@@ -89,8 +134,16 @@
         margin-top: 40px;
         display: flex;
         gap: 20px;
-        justify-content: space-between;
+
         align-items: center;
+
+        // @include mobile {
+        //   justify-content: flex-start;
+        // }
+
+        // @include tablet {
+        justify-content: space-between;
+        // }
 
         .quantity {
           height: 60px;

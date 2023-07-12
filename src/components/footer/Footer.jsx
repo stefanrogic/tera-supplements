@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./footer.scss";
 
 const Footer = () => {
@@ -9,21 +10,11 @@ const Footer = () => {
           <div className="center">
             <h1>PRODUCTS</h1>
             <ul>
-              <li>
-                <a href="#">PROTEIN</a>
-              </li>
-              <li>
-                <a href="#">CREATINE</a>
-              </li>
-              <li>
-                <a href="#">VITAMINS</a>
-              </li>
-              <li>
-                <a href="#">FOOD</a>
-              </li>
-              <li>
-                <a href="#">CLOTHING</a>
-              </li>
+              {["PROTEIN", "CREATINE", "VITAMINS", "FOOD", "CLOTHING"].map((a, i) => (
+                <li key={i}>
+                  <Link to={`/products/categories/${a.toLowerCase()}`}>{a}</Link>
+                </li>
+              ))}
             </ul>
           </div>
           <div className="right">

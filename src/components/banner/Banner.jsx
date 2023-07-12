@@ -14,10 +14,10 @@ const Banner = () => {
   const isInView = useInView(ref, { once: true });
 
   return (
-    <Link to="/products/categories/protein">
+    <Link to="/products/categories/vitamins">
       <motion.div className="default-margin" ref={ref} animate={isInView ? "visible" : "invisible"} variants={variants} transition={{ duration: 1 }}>
         <div className="home-banner">
-          <h1>CHECK OUR PROTEIN POWDERS</h1>
+          <h1>UNLEASH YOUR INNER VITALITY WITH OUR PREMIUM VITAMINS AND MINERALS</h1>
         </div>
       </motion.div>
     </Link>

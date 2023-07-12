@@ -10,8 +10,8 @@ const BestSellers = () => {
       <h1>BEST SELLERS</h1>
       <div className="best-sellers">
         <Product data={allProducts.find((_, i) => i === 0)} />
-        <Product data={allProducts.find((_, i) => i === 1)} />
-        <Product data={allProducts.find((_, i) => i === 2)} />
+        <Product data={allProducts.find((_, i) => i === 7)} />
+        <Product data={allProducts.find((_, i) => i === 5)} />
         <Product data={allProducts.find((_, i) => i === 3)} />
       </div>
     </div>
