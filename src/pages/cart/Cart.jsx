@@ -13,6 +13,7 @@ import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
 import BestSellers from "../../components/bestSellers/BestSellers";
 import RemoveShoppingCartIcon from "@mui/icons-material/RemoveShoppingCart";
+import CloseIcon from "@mui/icons-material/Close";
 
 const Cart = () => {
   const notify = (item) => toast.info(item ? `${item.productName} removed from the cart.` : "Cart Cleared.");
@@ -42,9 +43,30 @@ const Cart = () => {
               {showCheckout && (
                 <motion.div className="checkout-window" key={showCheckout} initial={{ opacity: 0 }} animate={{ opacity: 100 }} transition={{ duration: 0.5 }}>
                   <div className="top">
-                    <button onClick={() => setShowCheckout(false)}>X</button>
+                    <button onClick={() => setShowCheckout(false)}>
+                      <CloseIcon fontSize="large" />
+                    </button>
                   </div>
-                  <div className="center"></div>
+                  <div className="center">
+                    <span>Email</span>
+                    <input type="text" name="email" defaultValue="name@email.com" />
+
+                    <span>Card information</span>
+                    <div className="card-inputs">
+                      <input type="text" name="card-number" defaultValue="4242 4242 4242 4242" />
+                      <div>
+                        <input type="text" name="expiration-date" defaultValue="04/24" />
+                        <input type="text" name="three-digits-on-back" defaultValue="424" />
+                      </div>
+                    </div>
+                    <span>Name on card</span>
+                    <input type="text" name="full-name" defaultValue="John Doe" />
+
+                    <span>Country</span>
+                    <input type="text" name="country" defaultValue="Australia" />
+
+                    <p>This is in test mode, you can confirm order without filling the fields.</p>
+                  </div>
                   <div className="bottom">
                     <motion.button
                       whileHover={{ scale: 1.1, backgroundColor: "#383334", color: "#ffffff" }}

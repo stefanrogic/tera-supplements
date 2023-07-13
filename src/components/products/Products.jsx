@@ -25,9 +25,9 @@ const Products = () => {
         })}
       </div>
 
-      <motion.button className="all-products-btn" whileHover={{ scale: 1.1, backgroundColor: "#383334", color: "#fff" }} whileTap={{ scale: 0.9 }}>
+      {/* <motion.button className="all-products-btn" whileHover={{ scale: 1.1, backgroundColor: "#383334", color: "#fff" }} whileTap={{ scale: 0.9 }}>
         ALL PRODUCTS
-      </motion.button>
+      </motion.button> */}
     </motion.div>
   );
 };

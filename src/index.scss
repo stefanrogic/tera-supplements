@@ -33,6 +33,10 @@ button {
   cursor: pointer;
 }
 
+input {
+  font-family: "Oswald", sans-serif;
+}
+
 @mixin mobile {
   @media (min-width: 250px) {
     @content;

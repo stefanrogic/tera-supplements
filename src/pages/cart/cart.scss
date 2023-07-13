@@ -40,11 +40,51 @@
 
     @include tablet {
       width: 60%;
-      height: 700px;
+      height: 800px;
     }
 
     @include desktop {
       width: 40%;
+    }
+
+    .top {
+      button {
+        margin-left: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 70px;
+        height: 70px;
+        background-color: transparent;
+        color: #000000;
+      }
+    }
+
+    .center {
+      padding: 0 40px;
+
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      input {
+        padding-left: 15px;
+        height: 50px;
+        font-size: 20px;
+      }
+
+      .card-inputs {
+        display: flex;
+        flex-direction: column;
+
+        div {
+          display: flex;
+
+          input {
+            width: 50%;
+          }
+        }
+      }
     }
 
     .bottom {
