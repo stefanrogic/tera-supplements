@@ -35,27 +35,28 @@ const Products = () => {
       <motion.div className="products" initial={{ opacity: 0, x: -100 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }}>
         <motion.div className="default-margin" key={id} initial={{ opacity: 0 }} animate={{ opacity: 100 }} transition={{ duration: 1 }}>
           <motion.div className="left" initial={{ opacity: 0 }} animate={{ opacity: 100 }} transition={{ duration: 0.5 }}>
-            <h2 style={{ marginBottom: "20px" }}>FILTERS</h2>
-
-            {categoryFilters.map((f, i) => (
-              <div className="filter-section" key={i}>
-                <h3>{f.section.toUpperCase()}</h3>
-                {f.children.map((c, i) => (
-                  <div className="filter-section-child" key={i}>
-                    <input
-                      type="checkbox"
-                      name=""
-                      id={c}
-                      onClick={(e) => {
-                        // TODO: MULTIPLE FILTERS NOT WORKING (EXAMPLE: PRICE + WEIGHT SHOWS PRODUCT WITH SELECTED PRICE BUT IT DOESN'T CARE ABOUT THE WEIGHT)
-                        e.target.checked ? setCurrentFilters((prev) => [...prev, e.target.id]) : setCurrentFilters((prev) => removeFilter(prev, e));
-                      }}
-                    />
-                    <p>{c}</p>
-                  </div>
-                ))}
-              </div>
-            ))}
+            <div className="filters">
+              <h2 style={{ marginBottom: "20px" }}>FILTERS</h2>
+              {categoryFilters.map((f, i) => (
+                <div className="filter-section" key={i}>
+                  <h3>{f.section.toUpperCase()}</h3>
+                  {f.children.map((c, i) => (
+                    <div className="filter-section-child" key={i}>
+                      <input
+                        type="checkbox"
+                        name=""
+                        id={c}
+                        onClick={(e) => {
+                          // TODO: MULTIPLE FILTERS NOT WORKING (EXAMPLE: PRICE + WEIGHT SHOWS PRODUCT WITH SELECTED PRICE BUT IT DOESN'T CARE ABOUT THE WEIGHT)
+                          e.target.checked ? setCurrentFilters((prev) => [...prev, e.target.id]) : setCurrentFilters((prev) => removeFilter(prev, e));
+                        }}
+                      />
+                      <p>{c}</p>
+                    </div>
+                  ))}
+                </div>
+              ))}
+            </div>
           </motion.div>
           <div className="right">
             <div className="path">

@@ -3,7 +3,7 @@
 .products {
   position: relative;
   min-height: 100vh;
-  margin-top: 130px;
+  margin-top: 30px;
 
   .default-margin {
     width: 100%;
@@ -13,34 +13,39 @@
   }
 
   .left {
-    position: fixed;
+    position: relative;
     width: 20%;
     display: flex;
     flex-direction: column;
 
-    .filter-section {
-      // margin: 10px 0;
+    .filters {
+      position: sticky;
+      top: 205px;
 
-      display: flex;
-      flex-direction: column;
+      h2 {
+        margin: 0;
+      }
 
-      .filter-section-child {
+      .filter-section {
+        // margin: 10px 0;
+
         display: flex;
-        gap: 10px;
-        align-items: center;
+        flex-direction: column;
 
-        p {
-          margin: 5px 0;
-        }
+        .filter-section-child {
+          display: flex;
+          gap: 10px;
+          align-items: center;
 
-        input {
-          cursor: pointer;
+          p {
+            margin: 5px 0;
+          }
+
+          input {
+            cursor: pointer;
+          }
         }
       }
-    }
-
-    h2 {
-      margin: 0;
     }
 
     @include mobile {
