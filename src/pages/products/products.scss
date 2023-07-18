@@ -17,10 +17,11 @@
     width: 20%;
     display: flex;
     flex-direction: column;
+    padding-top: 75px;
 
     .filters {
       position: sticky;
-      top: 205px;
+      top: 131px;
 
       h2 {
         margin: 0;
