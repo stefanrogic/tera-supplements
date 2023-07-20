@@ -1,16 +1,21 @@
-const images = import.meta.glob("/src/assets/productImages/*");
+import casein500 from "../assets/productImages/casein-500.png";
+import casein1000 from "../assets/productImages/casein-1000.png";
+import hemp500 from "../assets/productImages/hemp-protein-500.png";
+import hemp1000 from "../assets/productImages/hemp-protein-1000.png";
+import pea500 from "../assets/productImages/pea-protein-500.png";
+import pea1000 from "../assets/productImages/pea-protein-500.png";
+// import rice500 from "../assets/productImages/rice-protein-500.png";
+import rice1000 from "../assets/productImages/rice-protein-1000.png";
+import whey500 from "../assets/productImages/whey-protein-500.png";
+import whey1000 from "../assets/productImages/whey-protein-1000.png";
 
-const getImgUrl = (chosenName) => {
-  let url;
-  Object.keys(images).forEach((img) => {
-    const name = img.split("/").find((_, i) => i === 4);
+import creatine300 from "../assets/productImages/creatine-monohydrate-300.png";
+import creatine500 from "../assets/productImages/creatine-monohydrate-500.png";
 
-    if (name === chosenName) {
-      url = img;
-    }
-  });
-  return url;
-};
+import vitaminC90 from "../assets/productImages/vitamin-c-90.png";
+import vitaminC120 from "../assets/productImages/vitamin-c-120.png";
+import vitaminD2500120 from "../assets/productImages/vitamin-d-2500-120.png";
+import vitaminD500060 from "../assets/productImages/vitamin-d-5000-60.png";
 
 //! FIX: SAME PRODUCTS WITH DIFFERENT VOLUMES SHOULD HAVE ONE OBJECT INSTEAD OF MULTIPLE
 export const allProducts = [
@@ -22,7 +27,7 @@ export const allProducts = [
     volume: "120 Capsules",
     productCategory: "Vitamins",
     productDescription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porttitor urna placerat eros accumsan tincidunt. Ut eu accumsan urna. Donec lobortis faucibus mollis. Integer dolor.",
-    productImg: getImgUrl(`vitamin-d-2500-120.png`),
+    productImg: vitaminD2500120,
     productFilter: [
       { filter: "price", value: "$40 - $50" },
       { filter: "volume", value: "120 tablets/capsules" },
@@ -36,7 +41,7 @@ export const allProducts = [
     volume: "120 Capsules",
     productCategory: "Vitamins",
     productDescription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porttitor urna placerat eros accumsan tincidunt. Ut eu accumsan urna. Donec lobortis faucibus mollis. Integer dolor.",
-    productImg: getImgUrl("vitamin-c-120.png"),
+    productImg: vitaminC120,
     productFilter: [
       { filter: "price", value: "$40 - $50" },
       { filter: "volume", value: "120 tablets/capsules" },
@@ -50,7 +55,7 @@ export const allProducts = [
     volume: "60 Capsules",
     productCategory: "Vitamins",
     productDescription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porttitor urna placerat eros accumsan tincidunt. Ut eu accumsan urna. Donec lobortis faucibus mollis. Integer dolor.",
-    productImg: getImgUrl("vitamin-d-5000-60.png"),
+    productImg: vitaminD500060,
     productFilter: [
       { filter: "price", value: "$20 - $30" },
       { filter: "volume", value: "60 tablets/capsules" },
@@ -64,7 +69,7 @@ export const allProducts = [
     volume: "90 Capsules",
     productCategory: "Vitamins",
     productDescription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porttitor urna placerat eros accumsan tincidunt. Ut eu accumsan urna. Donec lobortis faucibus mollis. Integer dolor.",
-    productImg: getImgUrl("vitamin-c-90.png"),
+    productImg: vitaminC90,
     productFilter: [
       { filter: "price", value: "$10 - $20" },
       { filter: "volume", value: "90 tablets/capsules" },
@@ -78,7 +83,7 @@ export const allProducts = [
     volume: "500g",
     productCategory: "Creatine",
     productDescription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porttitor urna placerat eros accumsan tincidunt. Ut eu accumsan urna. Donec lobortis faucibus mollis. Integer dolor.",
-    productImg: getImgUrl("creatine-monohydrate-500.png"),
+    productImg: creatine500,
     productFilter: [
       { filter: "price", value: "$30 - $40" },
       { filter: "weight", value: "500g" },
@@ -92,7 +97,7 @@ export const allProducts = [
     volume: "300g",
     productCategory: "Creatine",
     productDescription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porttitor urna placerat eros accumsan tincidunt. Ut eu accumsan urna. Donec lobortis faucibus mollis. Integer dolor.",
-    productImg: getImgUrl("creatine-monohydrate-300.png"),
+    productImg: creatine300,
     productFilter: [
       { filter: "price", value: "$20 - $30" },
       { filter: "weight", value: "300g" },
@@ -105,7 +110,7 @@ export const allProducts = [
     volume: "500g",
     productCategory: "Protein",
     productDescription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porttitor urna placerat eros accumsan tincidunt. Ut eu accumsan urna. Donec lobortis faucibus mollis. Integer dolor.",
-    productImg: getImgUrl("whey-protein-500.png"),
+    productImg: whey500,
     productFilter: [
       { filter: "price", value: "$10 - $20" },
       { filter: "weight", value: "1000g" },
@@ -119,7 +124,7 @@ export const allProducts = [
     volume: "1000g",
     productCategory: "Protein",
     productDescription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porttitor urna placerat eros accumsan tincidunt. Ut eu accumsan urna. Donec lobortis faucibus mollis. Integer dolor.",
-    productImg: getImgUrl("whey-protein-1000.png"),
+    productImg: whey1000,
     productFilter: [
       { filter: "price", value: "$20 - $30" },
       { filter: "weight", value: "1000g" },
@@ -134,7 +139,7 @@ export const allProducts = [
     volume: "1000g",
     productCategory: "Protein",
     productDescription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porttitor urna placerat eros accumsan tincidunt. Ut eu accumsan urna. Donec lobortis faucibus mollis. Integer dolor.",
-    productImg: getImgUrl("pea-protein-1000.png"),
+    productImg: pea1000,
     productFilter: [
       { filter: "price", value: "$30 - $40" },
       { filter: "weight", value: "1000g" },
@@ -149,7 +154,7 @@ export const allProducts = [
     volume: "500g",
     productCategory: "Protein",
     productDescription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porttitor urna placerat eros accumsan tincidunt. Ut eu accumsan urna. Donec lobortis faucibus mollis. Integer dolor.",
-    productImg: getImgUrl("pea-protein-500.png"),
+    productImg: pea500,
     productFilter: [
       { filter: "price", value: "$20 - $30" },
       { filter: "weight", value: "1000g" },
@@ -164,7 +169,7 @@ export const allProducts = [
     volume: "1000g",
     productCategory: "Protein",
     productDescription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porttitor urna placerat eros accumsan tincidunt. Ut eu accumsan urna. Donec lobortis faucibus mollis. Integer dolor.",
-    productImg: getImgUrl("rice-protein-1000.png"),
+    productImg: rice1000,
     productFilter: [
       { filter: "price", value: "$20 - $30" },
       { filter: "weight", value: "1000g" },
@@ -179,7 +184,7 @@ export const allProducts = [
     volume: "1000g",
     productCategory: "Protein",
     productDescription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porttitor urna placerat eros accumsan tincidunt. Ut eu accumsan urna. Donec lobortis faucibus mollis. Integer dolor.",
-    productImg: getImgUrl("casein-1000.png"),
+    productImg: casein1000,
     productFilter: [
       { filter: "price", value: "$20 - $30" },
       { filter: "weight", value: "1000g" },
@@ -193,7 +198,7 @@ export const allProducts = [
     volume: "500g",
     productCategory: "Protein",
     productDescription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porttitor urna placerat eros accumsan tincidunt. Ut eu accumsan urna. Donec lobortis faucibus mollis. Integer dolor.",
-    productImg: getImgUrl("casein-500.png"),
+    productImg: casein500,
     productFilter: [
       { filter: "price", value: "$10 - $20" },
       { filter: "weight", value: "500g" },
@@ -207,7 +212,7 @@ export const allProducts = [
     volume: "1000g",
     productCategory: "Protein",
     productDescription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porttitor urna placerat eros accumsan tincidunt. Ut eu accumsan urna. Donec lobortis faucibus mollis. Integer dolor.",
-    productImg: getImgUrl("hemp-protein-1000.png"),
+    productImg: hemp1000,
     productFilter: [
       { filter: "price", value: "$20 - $30" },
       { filter: "weight", value: "1000g" },
@@ -221,7 +226,7 @@ export const allProducts = [
     volume: "500g",
     productCategory: "Protein",
     productDescription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porttitor urna placerat eros accumsan tincidunt. Ut eu accumsan urna. Donec lobortis faucibus mollis. Integer dolor.",
-    productImg: getImgUrl("hemp-protein-500.png"),
+    productImg: hemp500,
     productFilter: [
       { filter: "price", value: "$10 - $20" },
       { filter: "weight", value: "500g" },
