@@ -1,6 +1,16 @@
-// import defaultPackageAlt from "../assets/defaultPackageAlt.png";
+const images = import.meta.glob("/src/assets/productImages/*");
 
-const convertGoogleDriveLink = (link) => `https://drive.google.com/uc?export=view&id=${link.split("/").find((_, i) => i === 5)}`;
+const getImgUrl = (chosenName) => {
+  let url;
+  Object.keys(images).forEach((img) => {
+    const name = img.split("/").find((_, i) => i === 4);
+
+    if (name === chosenName) {
+      url = img;
+    }
+  });
+  return url;
+};
 
 //! FIX: SAME PRODUCTS WITH DIFFERENT VOLUMES SHOULD HAVE ONE OBJECT INSTEAD OF MULTIPLE
 export const allProducts = [
@@ -12,7 +22,7 @@ export const allProducts = [
     volume: "120 Capsules",
     productCategory: "Vitamins",
     productDescription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porttitor urna placerat eros accumsan tincidunt. Ut eu accumsan urna. Donec lobortis faucibus mollis. Integer dolor.",
-    productImg: convertGoogleDriveLink("https://drive.google.com/file/d/1EJqZn_P5BpgHT3f9RAebulJC4k1jMWFJ/view?usp=drive_link"),
+    productImg: getImgUrl(`vitamin-d-2500-120.png`),
     productFilter: [
       { filter: "price", value: "$40 - $50" },
       { filter: "volume", value: "120 tablets/capsules" },
@@ -26,7 +36,7 @@ export const allProducts = [
     volume: "120 Capsules",
     productCategory: "Vitamins",
     productDescription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porttitor urna placerat eros accumsan tincidunt. Ut eu accumsan urna. Donec lobortis faucibus mollis. Integer dolor.",
-    productImg: convertGoogleDriveLink("https://drive.google.com/file/d/1zgr5Y-jGcj6RXjucW0-J5-4DFPZQEBbq/view?usp=drive_link"),
+    productImg: getImgUrl("vitamin-c-120.png"),
     productFilter: [
       { filter: "price", value: "$40 - $50" },
       { filter: "volume", value: "120 tablets/capsules" },
@@ -40,7 +50,7 @@ export const allProducts = [
     volume: "60 Capsules",
     productCategory: "Vitamins",
     productDescription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porttitor urna placerat eros accumsan tincidunt. Ut eu accumsan urna. Donec lobortis faucibus mollis. Integer dolor.",
-    productImg: convertGoogleDriveLink("https://drive.google.com/file/d/1RB0DAmiNJzpSxJ0iCo1kXSA9YKcDy7uR/view?usp=drive_link"),
+    productImg: getImgUrl("vitamin-d-5000-60.png"),
     productFilter: [
       { filter: "price", value: "$20 - $30" },
       { filter: "volume", value: "60 tablets/capsules" },
@@ -54,7 +64,7 @@ export const allProducts = [
     volume: "90 Capsules",
     productCategory: "Vitamins",
     productDescription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porttitor urna placerat eros accumsan tincidunt. Ut eu accumsan urna. Donec lobortis faucibus mollis. Integer dolor.",
-    productImg: convertGoogleDriveLink("https://drive.google.com/file/d/1Ulsa5i_mZz5YDgrsxbA6kU2ll1sHs-SA/view?usp=drive_link"),
+    productImg: getImgUrl("vitamin-c-90.png"),
     productFilter: [
       { filter: "price", value: "$10 - $20" },
       { filter: "volume", value: "90 tablets/capsules" },
@@ -63,12 +73,12 @@ export const allProducts = [
 
   {
     productName: "Creatine Monohydrate",
-    productSlug: "creatine-monohydrate-powder-500",
+    productSlug: "creatine-monohydrate-500",
     productPrice: 32.99,
     volume: "500g",
     productCategory: "Creatine",
     productDescription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porttitor urna placerat eros accumsan tincidunt. Ut eu accumsan urna. Donec lobortis faucibus mollis. Integer dolor.",
-    productImg: convertGoogleDriveLink("https://drive.google.com/file/d/1SaQVxohDWtBuLIef4VBAixgundMVyZZR/view?usp=drive_link"),
+    productImg: getImgUrl("creatine-monohydrate-500.png"),
     productFilter: [
       { filter: "price", value: "$30 - $40" },
       { filter: "weight", value: "500g" },
@@ -77,12 +87,12 @@ export const allProducts = [
 
   {
     productName: "Creatine Monohydrate",
-    productSlug: "creatine-monohydrate-powder-300",
+    productSlug: "creatine-monohydrate-300",
     productPrice: 25.99,
     volume: "300g",
     productCategory: "Creatine",
     productDescription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porttitor urna placerat eros accumsan tincidunt. Ut eu accumsan urna. Donec lobortis faucibus mollis. Integer dolor.",
-    productImg: convertGoogleDriveLink("https://drive.google.com/file/d/1Pm4DOBVXWHJiqkSuJNjIf1uH274WDbbz/view?usp=drive_link"),
+    productImg: getImgUrl("creatine-monohydrate-300.png"),
     productFilter: [
       { filter: "price", value: "$20 - $30" },
       { filter: "weight", value: "300g" },
@@ -95,7 +105,7 @@ export const allProducts = [
     volume: "500g",
     productCategory: "Protein",
     productDescription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porttitor urna placerat eros accumsan tincidunt. Ut eu accumsan urna. Donec lobortis faucibus mollis. Integer dolor.",
-    productImg: convertGoogleDriveLink("https://drive.google.com/file/d/1_3Yv-8Ix0DGGMSzTaMvSqkJnEd4eU0VA/view?usp=drive_link"),
+    productImg: getImgUrl("whey-protein-500.png"),
     productFilter: [
       { filter: "price", value: "$10 - $20" },
       { filter: "weight", value: "1000g" },
@@ -109,7 +119,7 @@ export const allProducts = [
     volume: "1000g",
     productCategory: "Protein",
     productDescription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porttitor urna placerat eros accumsan tincidunt. Ut eu accumsan urna. Donec lobortis faucibus mollis. Integer dolor.",
-    productImg: convertGoogleDriveLink("https://drive.google.com/file/d/1fVsBKPeI0rcLvQp6DOALv6Cy8MK-DMNt/view?usp=drive_link"),
+    productImg: getImgUrl("whey-protein-1000.png"),
     productFilter: [
       { filter: "price", value: "$20 - $30" },
       { filter: "weight", value: "1000g" },
@@ -124,7 +134,7 @@ export const allProducts = [
     volume: "1000g",
     productCategory: "Protein",
     productDescription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porttitor urna placerat eros accumsan tincidunt. Ut eu accumsan urna. Donec lobortis faucibus mollis. Integer dolor.",
-    productImg: convertGoogleDriveLink("https://drive.google.com/file/d/12HvHYvJVTxhEnYCFBCn1-Es_PNgtvrcU/view?usp=drive_link"),
+    productImg: getImgUrl("pea-protein-1000.png"),
     productFilter: [
       { filter: "price", value: "$30 - $40" },
       { filter: "weight", value: "1000g" },
@@ -139,7 +149,7 @@ export const allProducts = [
     volume: "500g",
     productCategory: "Protein",
     productDescription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porttitor urna placerat eros accumsan tincidunt. Ut eu accumsan urna. Donec lobortis faucibus mollis. Integer dolor.",
-    productImg: convertGoogleDriveLink("https://drive.google.com/file/d/14OdUXzTilCHq2daKpJLFn7gpDZJOb3AY/view?usp=drive_link"),
+    productImg: getImgUrl("pea-protein-500.png"),
     productFilter: [
       { filter: "price", value: "$20 - $30" },
       { filter: "weight", value: "1000g" },
@@ -154,7 +164,7 @@ export const allProducts = [
     volume: "1000g",
     productCategory: "Protein",
     productDescription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porttitor urna placerat eros accumsan tincidunt. Ut eu accumsan urna. Donec lobortis faucibus mollis. Integer dolor.",
-    productImg: convertGoogleDriveLink("https://drive.google.com/file/d/1eVO58kHT0v46GFXLyNNA9yCJ2ownYtxW/view?usp=drive_link"),
+    productImg: getImgUrl("rice-protein-1000.png"),
     productFilter: [
       { filter: "price", value: "$20 - $30" },
       { filter: "weight", value: "1000g" },
@@ -164,12 +174,12 @@ export const allProducts = [
 
   {
     productName: "Casein",
-    productSlug: "casein-protein-1000",
+    productSlug: "casein-1000",
     productPrice: 23.99,
     volume: "1000g",
     productCategory: "Protein",
     productDescription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porttitor urna placerat eros accumsan tincidunt. Ut eu accumsan urna. Donec lobortis faucibus mollis. Integer dolor.",
-    productImg: convertGoogleDriveLink("https://drive.google.com/file/d/1IUl7leZnCm8spqL8_WdTuBzJuRDRUplL/view?usp=drive_link"),
+    productImg: getImgUrl("casein-1000.png"),
     productFilter: [
       { filter: "price", value: "$20 - $30" },
       { filter: "weight", value: "1000g" },
@@ -178,12 +188,12 @@ export const allProducts = [
   },
   {
     productName: "Casein",
-    productSlug: "casein-protein-500",
+    productSlug: "casein-500",
     productPrice: 13.99,
     volume: "500g",
     productCategory: "Protein",
     productDescription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porttitor urna placerat eros accumsan tincidunt. Ut eu accumsan urna. Donec lobortis faucibus mollis. Integer dolor.",
-    productImg: convertGoogleDriveLink("https://drive.google.com/file/d/1qGO8aQYBwJAlvfpkvs-4YDv_QZ-sy4l4/view?usp=drive_link"),
+    productImg: getImgUrl("casein-500.png"),
     productFilter: [
       { filter: "price", value: "$10 - $20" },
       { filter: "weight", value: "500g" },
@@ -197,7 +207,7 @@ export const allProducts = [
     volume: "1000g",
     productCategory: "Protein",
     productDescription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porttitor urna placerat eros accumsan tincidunt. Ut eu accumsan urna. Donec lobortis faucibus mollis. Integer dolor.",
-    productImg: convertGoogleDriveLink("https://drive.google.com/file/d/1M3_ZeQKUMfjyW0FXqP1l4rwcXXULT1P7/view?usp=drive_link"),
+    productImg: getImgUrl("hemp-protein-1000.png"),
     productFilter: [
       { filter: "price", value: "$20 - $30" },
       { filter: "weight", value: "1000g" },
@@ -211,7 +221,7 @@ export const allProducts = [
     volume: "500g",
     productCategory: "Protein",
     productDescription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porttitor urna placerat eros accumsan tincidunt. Ut eu accumsan urna. Donec lobortis faucibus mollis. Integer dolor.",
-    productImg: convertGoogleDriveLink("https://drive.google.com/file/d/1PLA06X56t3_mBuGcWIGE7jtwXdRtWP_5/view?usp=drive_link"),
+    productImg: getImgUrl("hemp-protein-500.png"),
     productFilter: [
       { filter: "price", value: "$10 - $20" },
       { filter: "weight", value: "500g" },
