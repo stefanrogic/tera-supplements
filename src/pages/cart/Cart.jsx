@@ -1,11 +1,10 @@
 import "./cart.scss";
 
 import { toast } from "react-toastify";
-import { changeItemQuantity, removeItem, clearCart } from "../../redux/slices/cartSlice";
+import { changeItemQuantity, removeItem, setShowCheckout } from "../../redux/slices/cartSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { useState } from "react";
 
 import ScrollToTop from "../../components/scrollToTop/ScrollToTop";
 import HighlightOffIcon from "@mui/icons-material/HighlightOff";
@@ -13,13 +12,9 @@ import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
 import BestSellers from "../../components/bestSellers/BestSellers";
 import RemoveShoppingCartIcon from "@mui/icons-material/RemoveShoppingCart";
-import CloseIcon from "@mui/icons-material/Close";
 
 const Cart = () => {
   const notify = (item) => toast.info(item ? `${item.productName} removed from the cart.` : "Cart Cleared.");
-
-  const [showCheckout, setShowCheckout] = useState(false);
-  const [purchaseComplete, setPurchaseComplete] = useState(false);
 
   const cart = useSelector((state) => state.cartItems);
 
@@ -27,10 +22,7 @@ const Cart = () => {
 
   const dispatch = useDispatch();
   const remove = (product) => dispatch(removeItem(product));
-  const clear = () => {
-    dispatch(clearCart());
-    setPurchaseComplete(true);
-  };
+  const showModal = () => dispatch(setShowCheckout(true));
   const changeQt = (item, quantity) => dispatch(changeItemQuantity({ item: item, quantity: quantity }));
 
   return (
@@ -40,47 +32,6 @@ const Cart = () => {
         <motion.div className="cart" initial={{ opacity: 0, x: -100 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }}>
           {cart.items.length > 0 ? (
             <>
-              {showCheckout && (
-                <motion.div className="checkout-window" key={showCheckout} initial={{ opacity: 0 }} animate={{ opacity: 100 }} transition={{ duration: 0.5 }}>
-                  <div className="top">
-                    <button onClick={() => setShowCheckout(false)}>
-                      <CloseIcon fontSize="large" />
-                    </button>
-                  </div>
-                  <div className="center">
-                    <span>Email</span>
-                    <input type="text" name="email" defaultValue="name@email.com" />
-
-                    <span>Card information</span>
-                    <div className="card-inputs">
-                      <input type="text" name="card-number" defaultValue="4242 4242 4242 4242" />
-                      <div>
-                        <input type="text" name="expiration-date" defaultValue="04/24" />
-                        <input type="text" name="three-digits-on-back" defaultValue="424" />
-                      </div>
-                    </div>
-                    <span>Name on card</span>
-                    <input type="text" name="full-name" defaultValue="John Doe" />
-
-                    <span>Country</span>
-                    <input type="text" name="country" defaultValue="Australia" />
-
-                    <p>This is in test mode, you can confirm order without filling the fields.</p>
-                  </div>
-                  <div className="bottom">
-                    <motion.button
-                      whileHover={{ scale: 1.1, backgroundColor: "#383334", color: "#ffffff" }}
-                      whileTap={{ scale: 0.9, backgroundColor: "#009444" }}
-                      onClick={() => {
-                        clear();
-                        setShowCheckout(false);
-                      }}
-                    >
-                      CONFIRM ORDER
-                    </motion.button>
-                  </div>
-                </motion.div>
-              )}
               <div className="cart-items">
                 <h2 className="cart-head">YOUR CART</h2>
 
@@ -142,12 +93,12 @@ const Cart = () => {
                 <p className="total-par">TOTAL:</p>
                 <p className="price-value">$ {String(parseFloat(cart.totalPrice).toFixed(2))}</p>
 
-                <motion.button className="checkout-btn" whileHover={{ scale: 1.1, backgroundColor: "#383334", color: "#ffffff" }} whileTap={{ scale: 0.9, backgroundColor: "#009444" }} onClick={() => setShowCheckout(true)}>
+                <motion.button className="checkout-btn" whileHover={{ scale: 1.1, backgroundColor: "#383334", color: "#ffffff" }} whileTap={{ scale: 0.9, backgroundColor: "#009444" }} onClick={() => showModal()}>
                   CHECKOUT
                 </motion.button>
               </div>
             </>
-          ) : purchaseComplete ? (
+          ) : cart.purchaseComplete ? (
             <>
               <p></p>
               <>

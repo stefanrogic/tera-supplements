@@ -34,7 +34,6 @@ const Product = ({ data }) => {
       <Link className="product-link" to={`/products/categories/${data.productCategory.toLowerCase()}/${data.productSlug}`}>
         <motion.div className="img-div" whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.9, backgroundColor: "#231f20" }}>
           <LazyLoadImage src={data.productImg} key={data.productImg} effect="blur" placeholderSrc={`http://localhost:5173/${data.productImg}`} />
-          {/* <img src={data.productImg} alt={`http://localhost:5173/${data.productImg}`} loading="lazy" /> */}
         </motion.div>
       </Link>
       <div className="product-info">

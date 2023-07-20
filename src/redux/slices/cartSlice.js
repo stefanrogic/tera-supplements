@@ -31,6 +31,8 @@ const initialState = {
   navNum: JSON.parse(localStorage.getItem("navNum")) || 0,
   items: JSON.parse(localStorage.getItem("cart")) || [],
   totalPrice: JSON.parse(localStorage.getItem("totalPrice")) || 0,
+  showCheckout: false,
+  purchaseComplete: false,
 };
 
 export const cartSlice = createSlice({
@@ -101,8 +103,14 @@ export const cartSlice = createSlice({
         { name: "totalPrice", value: state.totalPrice },
       ].map((storage) => setLocalStorage(storage.name, JSON.stringify(storage.value)));
     },
+    setShowCheckout: (state, action) => {
+      state.showCheckout = action.payload;
+    },
+    setPurchaseComplete: (state) => {
+      state.purchaseComplete = true;
+    },
   },
 });
 
-export const { addItem, removeItem, clearCart, changeItemQuantity } = cartSlice.actions;
+export const { addItem, removeItem, clearCart, changeItemQuantity, setShowCheckout, setPurchaseComplete } = cartSlice.actions;
 export default cartSlice.reducer;

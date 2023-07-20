@@ -31,7 +31,6 @@ const variants = {
   exit: { opacity: 0, x: 100 },
 };
 
-/* eslint-disable react/prop-types */ // TODO: upgrade to latest eslint tooling
 const HeroContent = ({ contentPage }) => {
   const dispatch = useDispatch();
   const changePageList = () => dispatch(listPageForward());

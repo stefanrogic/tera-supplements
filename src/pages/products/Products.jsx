@@ -49,6 +49,7 @@ const Products = () => {
                         onClick={(e) => {
                           // TODO: MULTIPLE FILTERS NOT WORKING (EXAMPLE: PRICE + WEIGHT SHOWS PRODUCT WITH SELECTED PRICE BUT IT DOESN'T CARE ABOUT THE WEIGHT)
                           e.target.checked ? setCurrentFilters((prev) => [...prev, e.target.id]) : setCurrentFilters((prev) => removeFilter(prev, e));
+                          window.scrollTo(0, 0);
                         }}
                       />
                       <p>{c}</p>

@@ -6,6 +6,7 @@ import Footer from "./components/footer/Footer";
 import Cart from "./pages/cart/Cart";
 import ProductPage from "./pages/productPage/ProductPage";
 import Product from "./pages/products/Products";
+import CheckoutModal from "./components/checkoutModal/CheckoutModal";
 
 import { ToastContainer } from "react-toastify";
 import { createBrowserRouter, createRoutesFromElements, Outlet, Route, RouterProvider } from "react-router-dom";
@@ -14,8 +15,10 @@ function App() {
   const Root = () => (
     <>
       <ToastContainer style={{ marginTop: "100px" }} />
+      <CheckoutModal />
 
       <Nav />
+
       <Outlet />
       <Footer />
     </>
