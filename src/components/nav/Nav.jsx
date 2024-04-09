@@ -30,14 +30,14 @@ const Nav = () => {
               <h2 style={{ color: "#231f20" }}>TERA</h2>
             </Link>
             <ul>
-              {["PROTEIN", "CREATINE", "VITAMINS", "FOOD", "CLOTHING"].map((a, i) => (
+              {["NEW", "SUPPLEMENTS", "FOOD", "CLOTHING"].map((a, i) => (
                 <li key={i}>
                   <Link to={`/products/categories/${a.toLowerCase()}`}>{a}</Link>
                 </li>
               ))}
             </ul>
 
-            <Link to="/cart">
+            <Link to="/cart" className="cart-link">
               {cart.navNum > 0 && (
                 <motion.div className="cart-number" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5 }}>
                   <span>{cart.navNum}</span>
