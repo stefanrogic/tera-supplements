@@ -33,33 +33,35 @@ const Home = () => {
         </section>
 
         <section className="featured-section">
+          <h1>FEATURED PRODUCTS</h1>
+
           <div className="featured-section-grid">
             <div className="featured-product-card">
               <div className="img-container"></div>
               <div>
-                <h2>CATEGORY</h2>
-                <span>About this category</span>
+                <h2>Product</h2>
+                <span>About this product</span>
               </div>
             </div>
             <div className="featured-product-card">
               <div className="img-container"></div>
               <div>
-                <h2>CATEGORY</h2>
-                <span>About this category</span>
+                <h2>Product</h2>
+                <span>About this product</span>
               </div>
             </div>
             <div className="featured-product-card">
               <div className="img-container"></div>
               <div>
-                <h2>CATEGORY</h2>
-                <span>About this category</span>
+                <h2>Product</h2>
+                <span>About this product</span>
               </div>
             </div>
             <div className="featured-product-card">
               <div className="img-container"></div>
               <div>
-                <h2>CATEGORY</h2>
-                <span>About this category</span>
+                <h2>Product</h2>
+                <span>About this product</span>
               </div>
             </div>
           </div>
@@ -82,10 +84,9 @@ const Home = () => {
             </div>
           </div>
         </section>
-
-        {/* TEMP */}
-        <br />
       </div>
+
+      <section className="contact-section"></section>
     </div>
   );
 };

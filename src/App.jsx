@@ -18,7 +18,7 @@ function App() {
       <CheckoutModal />
       <Nav />
       <Outlet />
-      {/* <Footer /> */}
+      <footer style={{ width: "100%", minHeight: "400px", backgroundColor: "#cecece" }}></footer>
     </>
   );
 
