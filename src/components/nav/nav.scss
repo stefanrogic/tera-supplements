@@ -1,8 +1,11 @@
 @import "../../index.scss";
 
 nav {
-  position: sticky;
-  top: 0;
+  max-width: 1400px;
+  margin: 0 auto;
+
+  // position: sticky;
+  // top: 0;
 
   height: 100px;
   width: 100%;
@@ -12,7 +15,6 @@ nav {
   flex-direction: row;
   align-items: center;
 
-  border-bottom: 1px solid rgb(224, 224, 224);
   background-color: white;
 
   .default-margin {

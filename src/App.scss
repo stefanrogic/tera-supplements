@@ -1,8 +1,6 @@
 @import "./index.scss";
 
 .default-margin {
-  max-width: 1400px;
-  margin: 0 auto;
   position: relative;
 
   @include rwd("0px") {

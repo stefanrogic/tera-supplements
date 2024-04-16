@@ -2,7 +2,7 @@ import "./App.scss";
 
 import Home from "./pages/home/Home";
 import Nav from "./components/nav/Nav";
-import Footer from "./components/footer/Footer";
+// import Footer from "./components/footer/Footer";
 import Cart from "./pages/cart/Cart";
 import ProductPage from "./pages/productPage/ProductPage";
 import Product from "./pages/products/Products";
@@ -16,11 +16,9 @@ function App() {
     <>
       <ToastContainer style={{ marginTop: "100px" }} />
       <CheckoutModal />
-
       <Nav />
-
       <Outlet />
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 
@@ -29,7 +27,6 @@ function App() {
       <Route path="/" element={<Root />}>
         <Route index element={<Home />}></Route>
         <Route path="/cart" element={<Cart />}></Route>
-        {/* <Route path="/product/:id" element={<ProductPage />}></Route> */}
         <Route path="/products/categories" element={<Product />}></Route>
         <Route path="/products/categories/:id" element={<Product />}></Route>
         <Route path="/products/categories/:id/:id" element={<ProductPage />}></Route>
