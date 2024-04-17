@@ -43,7 +43,7 @@
     .product-cta-section {
       display: flex;
       flex-direction: row;
-      gap: 20px;
+      gap: 40px;
 
       .category-card {
         width: 100%;
@@ -85,8 +85,8 @@
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         // grid-template-rows: repeat(5, 1fr);
-        grid-column-gap: 20px;
-        grid-row-gap: 20px;
+        grid-column-gap: 40px;
+        grid-row-gap: 40px;
 
         .featured-product-card {
           width: 100%;

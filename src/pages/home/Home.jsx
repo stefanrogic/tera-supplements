@@ -18,50 +18,50 @@ const Home = () => {
             <div className="img-container"></div>
 
             <div>
-              <h2>CATEGORY</h2>
-              <span>About this category</span>
+              <h2>NEW</h2>
+              <span>Supplements</span>
             </div>
           </div>
           <div className="category-card">
             <div className="img-container"></div>
 
             <div>
-              <h2>CATEGORY</h2>
+              <h2>CLOTHES</h2>
               <span>About this category</span>
             </div>
           </div>
         </section>
 
         <section className="featured-section">
-          <h1>FEATURED PRODUCTS</h1>
+          <h1>BEST SELLERS</h1>
 
           <div className="featured-section-grid">
             <div className="featured-product-card">
               <div className="img-container"></div>
               <div>
-                <h2>Product</h2>
-                <span>About this product</span>
+                <h2>Creatine Monohydrate</h2>
+                <span>$20.99</span>
               </div>
             </div>
             <div className="featured-product-card">
               <div className="img-container"></div>
               <div>
-                <h2>Product</h2>
-                <span>About this product</span>
+                <h2>Protein Powder</h2>
+                <span>$29.99</span>
               </div>
             </div>
             <div className="featured-product-card">
               <div className="img-container"></div>
               <div>
-                <h2>Product</h2>
-                <span>About this product</span>
+                <h2>Vitamin D3</h2>
+                <span>$34.99</span>
               </div>
             </div>
             <div className="featured-product-card">
               <div className="img-container"></div>
               <div>
-                <h2>Product</h2>
-                <span>About this product</span>
+                <h2>Preworkout</h2>
+                <span>$26.99</span>
               </div>
             </div>
           </div>
