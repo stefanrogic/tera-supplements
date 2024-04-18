@@ -1,6 +1,7 @@
 import "./products.scss";
 
 import { allProducts } from "../../data/productList";
+import { Link } from "react-router-dom";
 
 const Products = ({ limit = 4, more = true }) => {
   return (
@@ -11,7 +12,7 @@ const Products = ({ limit = 4, more = true }) => {
         {allProducts.map(
           (p, i) =>
             i < limit && (
-              <div key={i} className="featured-product-card">
+              <Link to={`products/categories/${p.productCategory.toLowerCase()}/${p.productSlug}`} key={i} className="featured-product-card">
                 <div className="img-container">
                   <img src={p.productImg} alt="product-img" />
                 </div>
@@ -19,7 +20,7 @@ const Products = ({ limit = 4, more = true }) => {
                   <h2>{p.productName}</h2>
                   <span>${p.productPrice}</span>
                 </div>
-              </div>
+              </Link>
             )
         )}
       </div>
