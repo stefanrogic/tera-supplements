@@ -25,7 +25,11 @@ const Products = ({ limit = 4, more = true }) => {
         )}
       </div>
 
-      {more && <button>SHOP MORE</button>}
+      {more && (
+        <Link className="button-link" to="products/categories/creatine">
+          SHOP MORE
+        </Link>
+      )}
     </section>
   );
 };
