@@ -1,13 +1,1 @@
 @import "./index.scss";
-
-.default-margin {
-  position: relative;
-
-  @include rwd("0px") {
-    padding: 0 30px;
-  }
-
-  @include rwd("1450px") {
-    padding: 0;
-  }
-}

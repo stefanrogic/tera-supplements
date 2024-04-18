@@ -1,15 +1,15 @@
-import "./products.scss";
+import "./productsPage.scss";
 
 import { Link, useParams } from "react-router-dom";
 import { allProducts } from "../../data/productList";
-import { motion } from "framer-motion";
+// import { motion } from "framer-motion";
 import { useState } from "react";
 import { filters } from "../../data/filters";
-import Product from "../../components/product/Product";
 
+import Product from "../../components/product/Product";
 import ScrollToTop from "../../components/scrollToTop/ScrollToTop";
 
-const Products = () => {
+const ProductsPage = () => {
   const { id } = useParams();
   const products = allProducts.filter((item) => item.productCategory.toLowerCase() === id);
 
@@ -32,9 +32,9 @@ const Products = () => {
   return (
     <>
       <ScrollToTop />
-      <motion.div className="products" initial={{ opacity: 0, x: -100 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }}>
-        <motion.div className="default-margin" key={id} initial={{ opacity: 0 }} animate={{ opacity: 100 }} transition={{ duration: 1 }}>
-          <motion.div className="left" initial={{ opacity: 0 }} animate={{ opacity: 100 }} transition={{ duration: 0.5 }}>
+      <div className="products">
+        <div className="default-margin">
+          <div className="left">
             <div className="filters">
               <h2 style={{ marginBottom: "20px" }}>FILTERS</h2>
               {categoryFilters.map((f, i) => (
@@ -58,7 +58,7 @@ const Products = () => {
                 </div>
               ))}
             </div>
-          </motion.div>
+          </div>
           <div className="right">
             <div className="path">
               <Link to="/products">Products</Link>
@@ -99,10 +99,10 @@ const Products = () => {
               })}
             </div>
           </div>
-        </motion.div>
-      </motion.div>
+        </div>
+      </div>
     </>
   );
 };
 
-export default Products;
+export default ProductsPage;

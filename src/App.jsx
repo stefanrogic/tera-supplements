@@ -2,10 +2,9 @@ import "./App.scss";
 
 import Home from "./pages/home/Home";
 import Nav from "./components/nav/Nav";
-// import Footer from "./components/footer/Footer";
 import Cart from "./pages/cart/Cart";
 import ProductPage from "./pages/productPage/ProductPage";
-import Product from "./pages/products/Products";
+import Product from "./pages/productsPage/ProductsPage";
 import CheckoutModal from "./components/checkoutModal/CheckoutModal";
 
 import { ToastContainer } from "react-toastify";

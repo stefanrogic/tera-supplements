@@ -1,13 +1,21 @@
+@import "../../index.scss";
+
 .home {
   display: flex;
   flex-direction: column;
   gap: 100px;
 
+  padding: 0 20px;
+
+  @include rwd("1200px") {
+    padding: 0;
+  }
+
   button {
     padding: 10px 20px;
     border: none;
     color: white;
-    background-color: rgb(60, 60, 245);
+    background-color: #009444;
   }
 
   .hero-section {
@@ -63,62 +71,6 @@
           h2,
           span {
             margin: 0;
-          }
-        }
-      }
-    }
-
-    .featured-section {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 50px;
-
-      h1 {
-        margin: 0;
-        font-size: 40px;
-      }
-
-      .featured-section-grid {
-        width: 100%;
-
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        // grid-template-rows: repeat(5, 1fr);
-        grid-column-gap: 40px;
-        grid-row-gap: 40px;
-
-        .featured-product-card {
-          width: 100%;
-
-          display: flex;
-          flex-direction: column;
-          align-items: start;
-          gap: 20px;
-
-          .img-container {
-            width: inherit;
-            aspect-ratio: 3 / 4;
-            background-color: gray;
-          }
-
-          div {
-            h2,
-            span {
-              margin: 0;
-            }
-          }
-        }
-      }
-
-      .alt {
-        grid-template-columns: repeat(3, 1fr);
-
-        .featured-category-card {
-          .img-container {
-            width: inherit;
-            aspect-ratio: 1 / 1;
-            background-color: gray;
           }
         }
       }

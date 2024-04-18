@@ -4,12 +4,11 @@ import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { ReactComponent as Logo } from "../../assets/Logo.svg";
 import { motion } from "framer-motion";
-// import { ReactComponent as LogoAlt } from "../../assets/LogoAlt.svg";
+import { useState } from "react";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import MenuIcon from "@mui/icons-material/Menu";
-import { useState } from "react";
-import { LazyLoadImage } from "react-lazy-load-image-component";
 import Sidebar from "../sidebar/Sidebar";
 
 const Nav = () => {

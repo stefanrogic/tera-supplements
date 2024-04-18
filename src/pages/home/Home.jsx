@@ -1,3 +1,4 @@
+import Products from "../../components/products/Products";
 import "./home.scss";
 
 const Home = () => {
@@ -32,42 +33,7 @@ const Home = () => {
           </div>
         </section>
 
-        <section className="featured-section">
-          <h1>BEST SELLERS</h1>
-
-          <div className="featured-section-grid">
-            <div className="featured-product-card">
-              <div className="img-container"></div>
-              <div>
-                <h2>Creatine Monohydrate</h2>
-                <span>$20.99</span>
-              </div>
-            </div>
-            <div className="featured-product-card">
-              <div className="img-container"></div>
-              <div>
-                <h2>Protein Powder</h2>
-                <span>$29.99</span>
-              </div>
-            </div>
-            <div className="featured-product-card">
-              <div className="img-container"></div>
-              <div>
-                <h2>Vitamin D3</h2>
-                <span>$34.99</span>
-              </div>
-            </div>
-            <div className="featured-product-card">
-              <div className="img-container"></div>
-              <div>
-                <h2>Preworkout</h2>
-                <span>$26.99</span>
-              </div>
-            </div>
-          </div>
-
-          <button>SHOP MORE</button>
-        </section>
+        <Products />
 
         <section className="home-banner-cta"></section>
 
