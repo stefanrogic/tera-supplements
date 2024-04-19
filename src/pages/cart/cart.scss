@@ -4,7 +4,9 @@
   position: relative;
   margin-top: 30px;
   // min-height: 90vh;
+  max-width: 1200px;
   width: 100%;
+  margin: 0 auto;
 
   display: flex;
   flex-direction: column;
@@ -13,10 +15,6 @@
   button {
     border-radius: 10px;
     border: none;
-  }
-
-  .default-margin {
-    width: inherit;
   }
 
   .cart-items {
