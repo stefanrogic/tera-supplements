@@ -29,8 +29,10 @@
 
       .swiper-slide {
         height: inherit;
+
         img {
           width: 100%;
+          height: 100%;
 
           object-fit: cover;
         }
@@ -58,10 +60,18 @@
 
     .brands-section {
       display: grid;
-      grid-template-columns: repeat(5, 1fr);
+      grid-template-columns: repeat(1, 1fr);
       // grid-template-rows: repeat(5, 1fr);
       grid-column-gap: 20px;
       grid-row-gap: 20px;
+
+      @include rwd("800px") {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      @include rwd("1200px") {
+        grid-template-columns: repeat(5, 1fr);
+      }
 
       .brand {
         width: 100%;
@@ -72,8 +82,12 @@
 
     .product-cta-section {
       display: flex;
-      flex-direction: row;
+      flex-direction: column;
       gap: 40px;
+
+      @include rwd("800px") {
+        flex-direction: row;
+      }
 
       .category-card {
         width: 100%;
